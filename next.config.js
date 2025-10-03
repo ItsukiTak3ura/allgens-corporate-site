@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
   output: 'export',
   distDir: 'docs',
   trailingSlash: true,
-  basePath: '/allgens-corporate-site',
-  assetPrefix: '/allgens-corporate-site/',
+  basePath: isProd ? '/allgens-corporate-site' : '',
+  assetPrefix: isProd ? '/allgens-corporate-site/' : '',
   images: {
     unoptimized: true,
   },
