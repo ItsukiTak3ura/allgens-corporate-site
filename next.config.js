@@ -3,6 +3,8 @@ const nextConfig = {
   output: 'export',
   distDir: 'docs',
   trailingSlash: true,
+  basePath: '/allgens-corporate-site',
+  assetPrefix: '/allgens-corporate-site/',
   images: {
     unoptimized: true,
   },
