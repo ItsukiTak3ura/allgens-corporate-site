@@ -13,10 +13,6 @@ const nextConfig = {
   compress: true,
   swcMinify: true,
   reactStrictMode: true,
-  i18n: {
-    locales: ['ja', 'en'],
-    defaultLocale: 'ja',
-  },
 }
 
 module.exports = nextConfig
