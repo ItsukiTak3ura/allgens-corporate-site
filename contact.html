@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ - オールジェンス株式会社</title>
+    <meta name="description" content="オールジェンス株式会社へのお問い合わせページ。AI導入、システム運用、ECマーケティング支援などについて、お気軽にご相談ください。">
+    <meta name="keywords" content="お問い合わせ,問い合わせ,資料請求,相談,AI導入,システム運用,ECマーケティング">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        accent: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
+                        'jp': ['Noto Sans JP', 'sans-serif'],
+                        'en': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'fade-in-up': 'fadeInUp 1s ease-out',
+                        'fade-in-down': 'fadeInDown 1s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-40px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(40px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="canonical" href="https://allgens.co.jp/contact.html">
+</head>
+<body class="font-sans text-gray-800 bg-white dark:bg-dark-950 dark:text-white transition-colors duration-300">
+    <!-- ヘッダー -->
+    <header class="bg-white/80 dark:bg-dark-950/80 backdrop-blur-md shadow-lg fixed top-0 left-0 right-0 z-40 border-b border-gray-200/20 dark:border-gray-800/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-bold text-primary-600 dark:text-primary-400 font-en tracking-tight transition-none">ALLGENS</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        ホーム
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        会社概要
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="services.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        サービス
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="results.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        実績
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="message.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        代表挨拶
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-primary-600 dark:text-primary-400 font-bold relative">
+                        お問い合わせ
+                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-600 dark:bg-primary-400"></span>
+                    </a>
+                </nav>
+                <!-- モバイルメニューボタン -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobileMenu" class="md:hidden bg-white border-t border-gray-200 hidden">
+            <div class="px-4 py-2 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-300">ホーム</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-300">会社概要</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-300">サービス</a>
+                <a href="results.html" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-300">実績</a>
+                <a href="message.html" class="block px-3 py-2 text-gray-700 hover:text-primary transition-colors duration-300">代表挨拶</a>
+                <a href="contact.html" class="block px-3 py-2 text-primary font-medium">お問い合わせ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="pt-20">
+        <!-- ページヘッダー -->
+        <section class="relative py-32 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-dark-900 dark:via-dark-950 dark:to-dark-800 overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIgZmlsbD0icmdiYSg1OSwxMzAsMjM0LDAuMSkiLz4KPC9zdmc+')] opacity-30"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="animate-fade-in-up">
+                    <span class="inline-block px-6 py-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-8">
+                        <i data-lucide="mail" class="w-4 h-4 inline mr-2"></i>
+                        お問い合わせ
+                    </span>
+                    <h1 class="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-8 font-jp">
+                        お問い合わせ
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed font-jp">
+                        お気軽にご相談ください
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- お問い合わせフォーム -->
+        <section class="py-20 bg-white dark:bg-dark-900">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg p-8 md:p-12 animate-scale-in">
+                    <div class="text-center mb-8">
+                        <h2 class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">お問い合わせフォーム</h2>
+                        <p class="text-gray-600 dark:text-gray-200 font-jp">
+                            お客様のビジネス課題について、無料でご相談を承ります。<br>
+                            お問い合わせ内容を入力し、送信ボタンをクリックしてください。
+                        </p>
+                    </div>
+                    
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-primary-600 dark:text-primary-400 mb-2 font-jp">
+                                    お名前 <span class="text-red-500">*</span>
+                                </label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400 focus:border-transparent transition-all duration-300 bg-white dark:bg-dark-800 text-gray-900 dark:text-white">
+                            </div>
+                            
+                            <div>
+                                <label for="company" class="block text-sm font-semibold text-primary-600 dark:text-primary-400 mb-2 font-jp">会社名</label>
+                                <input type="text" id="company" name="company" 
+                                       class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400 focus:border-transparent transition-all duration-300 bg-white dark:bg-dark-800 text-gray-900 dark:text-white">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-primary-600 dark:text-primary-400 mb-2 font-jp">
+                                    メールアドレス <span class="text-red-500">*</span>
+                                </label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400 focus:border-transparent transition-all duration-300 bg-white dark:bg-dark-800 text-gray-900 dark:text-white">
+                            </div>
+                            
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-primary-600 dark:text-primary-400 mb-2 font-jp">電話番号</label>
+                                <input type="tel" id="phone" name="phone" 
+                                       class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary-600 dark:focus:ring-primary-400 focus:border-transparent transition-all duration-300 bg-white dark:bg-dark-800 text-gray-900 dark:text-white">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-semibold text-primary mb-2">ご関心のあるサービス</label>
+                            <select id="service" name="service" 
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
+                                <option value="">選択してください</option>
+                                <option value="ai">AI導入コンサルティング</option>
+                                <option value="system">システム運用サポート</option>
+                                <option value="ec">ECマーケティング支援</option>
+                                <option value="development">システム開発</option>
+                                <option value="other">その他</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-primary mb-2">
+                                お問い合わせ内容 <span class="text-red-500">*</span>
+                            </label>
+                            <textarea id="message" name="message" required rows="6" 
+                                      placeholder="お問い合わせ内容を詳しくお書きください。"
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-vertical"></textarea>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input type="checkbox" id="privacy" name="privacy" required 
+                                   class="mt-1 mr-3 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary">
+                            <label for="privacy" class="text-sm text-gray-600">
+                                <a href="privacy.html" target="_blank" class="text-primary hover:underline">プライバシーポリシー</a>に同意します 
+                                <span class="text-red-500">*</span>
+                            </label>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" 
+                                    class="w-full md:w-auto bg-gradient-to-r from-primary to-secondary text-white px-12 py-4 rounded-lg font-bold text-lg hover:from-secondary hover:to-primary transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                                送信する
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 会社情報 -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">会社情報</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        オールジェンス株式会社へのアクセス情報
+                    </p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-6">会社概要</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-3 h-3 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-semibold text-gray-800">会社名：</span>
+                                    <span class="text-gray-600">オールジェンス株式会社</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-3 h-3 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-semibold text-gray-800">所在地：</span>
+                                    <span class="text-gray-600">〒100-0001<br>東京都千代田区千代田1-1-1<br>サンプルビル5階</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-3 h-3 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-semibold text-gray-800">電話番号：</span>
+                                    <span class="text-gray-600">03-1234-5678</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-3 h-3 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-semibold text-gray-800">メールアドレス：</span>
+                                    <span class="text-gray-600">info@allgens.co.jp</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-3 h-3 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></div>
+                                <div>
+                                    <span class="font-semibold text-gray-800">営業時間：</span>
+                                    <span class="text-gray-600">平日 9:00-18:00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold text-primary mb-6 mt-12">交通アクセス</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">JR山手線・中央線・総武線「東京駅」</p>
+                                    <p class="text-gray-600">徒歩5分</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">東京メトロ丸ノ内線「東京駅」</p>
+                                    <p class="text-gray-600">徒歩3分</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">東京メトロ東西線「大手町駅」</p>
+                                    <p class="text-gray-600">徒歩7分</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.4880305798474!2d139.763936!3d35.681236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f6b7b%3A0xadb4a83c0b0b0b0b!2z5p2x5Lqs6YO95rih6Kmy5Yy6!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp" 
+                                class="w-full h-80 border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- よくある質問 -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">よくある質問</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        お客様からよくいただく質問と回答
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+                        <h3 class="text-xl font-bold text-primary mb-4">Q. 無料相談はありますか？</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            A. はい、初回のご相談は無料で承っております。お客様のビジネス課題について、専門スタッフが詳しくお話を伺い、最適なソリューションをご提案いたします。
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+                        <h3 class="text-xl font-bold text-primary mb-4">Q. 導入までの期間はどのくらいですか？</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            A. プロジェクトの規模や内容により異なりますが、一般的には3ヶ月から6ヶ月程度を想定しています。詳細なスケジュールは、お打ち合わせの際にご提案いたします。
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+                        <h3 class="text-xl font-bold text-primary mb-4">Q. サポート体制はどうなっていますか？</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            A. 24時間365日の監視体制で、お客様のシステムをサポートしています。障害発生時も迅速な対応で、業務への影響を最小限に抑えます。
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+                        <h3 class="text-xl font-bold text-primary mb-4">Q. 中小企業でも利用できますか？</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            A. はい、中小企業様にもお気軽にご利用いただけます。お客様の規模に合わせた最適なソリューションをご提案いたします。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white relative overflow-hidden">
+        <!-- 背景パターン -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPgo8L3N2Zz4=')] opacity-50"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <h3 class="text-3xl font-bold mb-6 font-jp">オールジェンス株式会社</h3>
+                    <p class="text-gray-200 mb-6 text-lg font-jp">テクノロジーで未来を切り拓く</p>
+                    <div class="space-y-3 text-gray-200">
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1 text-accent flex-shrink-0"></i>
+                            <div>
+                                <p>〒100-0001</p>
+                                <p>東京都千代田区千代田1-1-1</p>
+                                <p>サンプルビル5階</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 mr-3 text-accent"></i>
+                            <p>03-1234-5678</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-accent"></i>
+                            <p>info@allgens.co.jp</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-jp">サービス</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="brain" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            AI導入コンサルティング
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="settings" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            システム運用サポート
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="trending-up" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            ECマーケティング支援
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="code" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            システム開発
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-jp">会社情報</h3>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="building" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            会社概要
+                        </a></li>
+                        <li><a href="message.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="user" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            代表挨拶
+                        </a></li>
+                        <li><a href="contact.html" class="text-accent font-medium flex items-center group">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            お問い合わせ
+                        </a></li>
+                        <li><a href="privacy.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="shield" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            プライバシーポリシー
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 pt-8 text-center text-gray-200">
+                <p class="font-jp">&copy; 2024 オールジェンス株式会社. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // モバイルメニューの切り替え
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // フォーム送信処理（ダミー）
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // フォームデータの取得
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // バリデーション
+            if (!name || !email || !message) {
+                alert('必須項目を入力してください。');
+                return;
+            }
+            
+            // 送信処理（ダミー）
+            alert('お問い合わせありがとうございます。\n\n' +
+                  'お名前: ' + name + '\n' +
+                  'メールアドレス: ' + email + '\n\n' +
+                  '担当者より3営業日以内にご連絡いたします。\n' +
+                  '今しばらくお待ちください。');
+            
+            // フォームリセット
+            event.target.reset();
+        }
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // フォーム入力時のリアルタイムバリデーション
+        document.addEventListener('DOMContentLoaded', function() {
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+            
+            // メールアドレスの形式チェック
+            emailInput.addEventListener('blur', function() {
+                const email = this.value;
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (email && !emailRegex.test(email)) {
+                    this.classList.add('border-red-500');
+                    this.setCustomValidity('正しいメールアドレスを入力してください。');
+                } else {
+                    this.classList.remove('border-red-500');
+                    this.setCustomValidity('');
+                }
+            });
+            
+            // 電話番号の形式チェック
+            phoneInput.addEventListener('blur', function() {
+                const phone = this.value;
+                const phoneRegex = /^[\d\-\(\)\+\s]+$/;
+                if (phone && !phoneRegex.test(phone)) {
+                    this.classList.add('border-red-500');
+                    this.setCustomValidity('正しい電話番号を入力してください。');
+                } else {
+                    this.classList.remove('border-red-500');
+                    this.setCustomValidity('');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

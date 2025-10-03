@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オールジェンス株式会社 - テクノロジーで未来を切り拓く</title>
+    <meta name="description" content="オールジェンス株式会社は、AI導入コンサルティング、システム運用サポート、ECマーケティング支援を通じて、人と社会を豊かにする技術活用を目指しています。">
+    <meta name="keywords" content="AI導入,システム運用,ECマーケティング,コンサルティング,テクノロジー">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://allgens.co.jp/">
+    <meta property="og:title" content="オールジェンス株式会社 - テクノロジーで未来を切り拓く">
+    <meta property="og:description" content="AI導入コンサルティング、システム運用サポート、ECマーケティング支援を通じて、お客様のビジネス成長をサポートします。">
+    <meta property="og:image" content="https://allgens.co.jp/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://allgens.co.jp/">
+    <meta property="twitter:title" content="オールジェンス株式会社 - テクノロジーで未来を切り拓く">
+    <meta property="twitter:description" content="AI導入コンサルティング、システム運用サポート、ECマーケティング支援を通じて、お客様のビジネス成長をサポートします。">
+    <meta property="twitter:image" content="https://allgens.co.jp/og-image.jpg">
+    
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "オールジェンス株式会社",
+        "url": "https://allgens.co.jp",
+        "logo": "https://allgens.co.jp/logo.png",
+        "description": "AI導入コンサルティング、システム運用サポート、ECマーケティング支援を通じて、お客様のビジネス成長をサポートします。",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "JP",
+            "addressLocality": "東京都",
+            "addressRegion": "東京都"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+81-3-1234-5678",
+            "contactType": "customer service"
+        }
+    }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" onload="lucide.createIcons()"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- フォント読み込み最適化 -->
+    <style>
+        /* フォント読み込み中のフォールバック */
+        .font-loading {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+        
+        /* フォント読み込み完了後のスタイル */
+        .fonts-loaded .font-jp {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        
+        .fonts-loaded .font-en {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* アイコン読み込み中のフォールバック */
+        [data-lucide] {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+        }
+        
+        [data-lucide]:not(.lucide-loaded) {
+            background: currentColor;
+            mask: none;
+            -webkit-mask: none;
+        }
+        
+        /* ビューポート安定化 */
+        .viewport-stable {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* 全画面表示とウィンドウ表示の位置調整 */
+        @media (display-mode: fullscreen) {
+            .hero-section {
+                height: 100vh !important;
+                height: 100dvh !important;
+            }
+        }
+        
+        @media (display-mode: browser) {
+            .hero-section {
+                height: 100vh !important;
+                min-height: 100vh !important;
+            }
+        }
+        
+        /* モバイルブラウザのアドレスバー対応 */
+        @supports (height: 100dvh) {
+            .hero-section {
+                height: 100dvh;
+            }
+        }
+        
+        @supports not (height: 100dvh) {
+            .hero-section {
+                height: 100vh;
+            }
+        }
+    </style>
+    
+    <!-- パフォーマンス最適化 -->
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            950: '#082f49',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        },
+                        accent: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
+                        'jp': ['Noto Sans JP', 'sans-serif'],
+                        'en': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out',
+                        'fade-in-up': 'fadeInUp 1s ease-out',
+                        'fade-in-down': 'fadeInDown 1s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'bounce-slow': 'bounce 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.8)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                        slideInLeft: {
+                            '0%': { opacity: '0', transform: 'translateX(-40px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            '0%': { opacity: '0', transform: 'translateX(40px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="canonical" href="https://allgens.co.jp/">
+</head>
+    <body class="font-sans text-gray-800 bg-white dark:bg-dark-950 dark:text-white transition-colors duration-300" style="scroll-behavior: smooth;">
+    <!-- ダークモード切り替えボタン -->
+    <button id="darkModeToggle" class="fixed top-4 right-4 z-50 p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/30" aria-label="ダークモード切り替え" style="position: fixed; top: 1rem; right: 1rem;">
+        <i data-lucide="sun" class="w-5 h-5 text-white dark:hidden" aria-hidden="true"></i>
+        <i data-lucide="moon" class="w-5 h-5 text-white hidden dark:block" aria-hidden="true"></i>
+    </button>
+
+    <!-- ヘッダー -->
+    <header class="bg-white/80 dark:bg-dark-950/80 backdrop-blur-md shadow-lg fixed top-0 left-0 right-0 z-40 border-b border-gray-200/20 dark:border-gray-800/20" style="position: fixed; top: 0; left: 0; right: 0; z-index: 40;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="text-2xl font-bold text-primary-600 dark:text-primary-400 font-en tracking-tight">ALLGENS</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        ホーム
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="about.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        会社概要
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        サービス
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="results.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        実績
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="message.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        代表挨拶
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
+                        お問い合わせ
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </nav>
+                <!-- モバイルメニューボタン -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6 text-gray-700 dark:text-gray-300"></i>
+                </button>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobileMenu" class="md:hidden bg-white/95 dark:bg-dark-950/95 backdrop-blur-md border-t border-gray-200/20 dark:border-gray-800/20 hidden">
+            <div class="px-4 py-2 space-y-1">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">ホーム</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">会社概要</a>
+                <a href="services.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">サービス</a>
+                <a href="results.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">実績</a>
+                <a href="message.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">代表挨拶</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">お問い合わせ</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="pt-20">
+        <!-- ヒーローセクション -->
+        <section class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden viewport-stable" style="height: 100vh; height: 100dvh;">
+            <!-- シネマティックな背景 -->
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-gradient-to-br from-dark-900/90 via-primary-900/70 to-accent-900/50"></div>
+                <!-- 動的なパーティクル背景 -->
+                <div class="absolute inset-0">
+                    <div class="particle-bg"></div>
+                </div>
+                <!-- グリッドパターン -->
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTSA0MCAwIEwgMCAwIDAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjwvc3ZnPg==')] opacity-30"></div>
+            </div>
+            
+            <!-- メインコンテンツ -->
+            <div class="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col justify-center items-center" style="height: 100%; min-height: calc(100vh - 5rem);">
+                <div class="hero-content w-full">
+                    <div class="mb-12">
+                        <span class="inline-block px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-sm font-medium text-white/90 border border-white/20 animate-fade-in-down">
+                            <i data-lucide="sparkles" class="w-4 h-4 inline mr-2"></i>
+                            次世代テクノロジーソリューション
+                        </span>
+                    </div>
+                    
+                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-[0.9] font-en tracking-tight">
+                        <span class="block text-white">SHAPING</span>
+                        <span class="block bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 bg-clip-text text-transparent animate-pulse-slow">THE FUTURE</span>
+                    </h1>
+                    
+                    <p class="text-xl md:text-2xl lg:text-3xl mb-16 opacity-90 max-w-5xl mx-auto leading-relaxed font-jp font-light">
+                        テクノロジーの力で、<br class="hidden md:block">
+                        ビジネスの可能性を無限に広げる
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+                        <a href="contact.html" class="group relative inline-flex items-center bg-gradient-to-r from-primary-600 to-primary-700 text-white px-12 py-6 rounded-2xl font-bold text-lg hover:from-primary-500 hover:to-primary-600 transition-all duration-500 transform hover:-translate-y-2 shadow-2xl hover:shadow-primary-500/25 overflow-hidden focus:outline-none focus:ring-4 focus:ring-primary-500/50">
+                            <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                            <i data-lucide="rocket" class="w-6 h-6 mr-3 group-hover:animate-bounce" aria-hidden="true"></i>
+                            <span>今すぐ始める</span>
+                        </a>
+                        <a href="services.html" class="group inline-flex items-center border-2 border-white/30 text-white px-12 py-6 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-white/50 transition-all duration-500 transform hover:-translate-y-2 backdrop-blur-sm focus:outline-none focus:ring-4 focus:ring-white/30">
+                            <i data-lucide="play" class="w-6 h-6 mr-3 group-hover:scale-110 transition-transform" aria-hidden="true"></i>
+                            <span>サービスを見る</span>
+                        </a>
+                    </div>
+                    
+                    <!-- 統計情報 -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                        <div class="text-center group">
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter group-hover:scale-110 transition-transform duration-300" data-target="50">0</div>
+                            <div class="text-sm text-white/70 font-medium">導入実績</div>
+                            <div class="text-xs text-white/50 mt-1">件</div>
+                        </div>
+                        <div class="text-center group">
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter group-hover:scale-110 transition-transform duration-300" data-target="95">0</div>
+                            <div class="text-sm text-white/70 font-medium">顧客満足度</div>
+                            <div class="text-xs text-white/50 mt-1">%</div>
+                        </div>
+                        <div class="text-center group">
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter group-hover:scale-110 transition-transform duration-300" data-target="30">0</div>
+                            <div class="text-sm text-white/70 font-medium">コスト削減率</div>
+                            <div class="text-xs text-white/50 mt-1">%</div>
+                        </div>
+                        <div class="text-center group">
+                            <div class="text-3xl md:text-4xl font-bold text-white mb-2 counter group-hover:scale-110 transition-transform duration-300" data-target="24">0</div>
+                            <div class="text-sm text-white/70 font-medium">時間サポート</div>
+                            <div class="text-xs text-white/50 mt-1">時間</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- スクロールインジケーター -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);">
+                <div class="flex flex-col items-center">
+                    <span class="text-sm text-white/70 mb-2 font-medium">Scroll</span>
+                    <i data-lucide="chevron-down" class="w-6 h-6 text-white/70" aria-hidden="true"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- 課題セクション -->
+        <section class="py-32 bg-white dark:bg-dark-950 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-gray-50/50 to-white dark:from-dark-900/50 dark:to-dark-950"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <span class="inline-block px-4 py-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full text-sm font-medium mb-6">
+                        <i data-lucide="alert-triangle" class="w-4 h-4 inline mr-2"></i>
+                        ビジネスの課題
+                    </span>
+                    <h2 class="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-8 font-jp">
+                        あなたのビジネスは<br class="hidden md:block">
+                        <span class="text-red-600 dark:text-red-400">本当に最適化</span>されていますか？
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed font-jp">
+                        多くの企業が直面している課題と、私たちが提供する解決策をご紹介します
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="group relative">
+                        <div class="bg-white dark:bg-dark-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-200/50 dark:border-gray-700/50">
+                            <div class="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="trending-down" class="w-8 h-8 text-red-600 dark:text-red-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-jp">非効率な業務プロセス</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp">
+                                手作業による非効率な業務プロセスが、生産性の向上を阻害しています
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative">
+                        <div class="bg-white dark:bg-dark-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-200/50 dark:border-gray-700/50">
+                            <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="database" class="w-8 h-8 text-orange-600 dark:text-orange-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-jp">データ活用の不足</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp">
+                                豊富なデータを持ちながら、意思決定に活用できていない企業が多数存在します
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative">
+                        <div class="bg-white dark:bg-dark-800 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-gray-200/50 dark:border-gray-700/50">
+                            <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="clock" class="w-8 h-8 text-yellow-600 dark:text-yellow-400"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-jp">技術革新への対応遅れ</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp">
+                                急速に進歩するテクノロジーに追いつけず、競争優位性を失っています
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 解決策セクション -->
+        <section class="py-32 bg-gradient-to-br from-primary-50 to-accent-50 dark:from-dark-900 dark:to-dark-800 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIgZmlsbD0icmdiYSg1OSwxMzAsMjM0LDAuMSkiLz4KPC9zdmc+')] opacity-50"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <span class="inline-block px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full text-sm font-medium mb-6">
+                        <i data-lucide="check-circle" class="w-4 h-4 inline mr-2"></i>
+                        私たちの解決策
+                    </span>
+                    <h2 class="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-8 font-jp">
+                        テクノロジーで<br class="hidden md:block">
+                        <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">未来を創造</span>する
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed font-jp">
+                        最先端のテクノロジーを活用し、お客様のビジネスを次のレベルへと導きます
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="group relative">
+                        <div class="bg-white/90 dark:bg-dark-800/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-white/30 dark:border-gray-700/50">
+                            <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i data-lucide="brain" class="w-10 h-10 text-white" style="color: white !important;"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 font-jp">AI導入コンサルティング</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp text-sm mb-4">
+                                機械学習とAI技術を活用した業務効率化と意思決定支援
+                            </p>
+                            <div class="text-xs text-primary-600 dark:text-primary-400 font-medium">
+                                詳細を見る →
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative">
+                        <div class="bg-white/90 dark:bg-dark-800/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-white/30 dark:border-gray-700/50">
+                            <div class="w-20 h-20 bg-gradient-to-br from-accent-500 to-accent-600 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i data-lucide="settings" class="w-10 h-10 text-white" style="color: white !important;"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 font-jp">システム運用サポート</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp text-sm mb-4">
+                                24時間365日の監視体制による安定したシステム運用
+                            </p>
+                            <div class="text-xs text-accent-600 dark:text-accent-400 font-medium">
+                                詳細を見る →
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative">
+                        <div class="bg-white/90 dark:bg-dark-800/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-white/30 dark:border-gray-700/50">
+                            <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i data-lucide="trending-up" class="w-10 h-10 text-white" style="color: white !important;"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 font-jp">ECマーケティング支援</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp text-sm mb-4">
+                                データドリブンなマーケティング戦略による売上向上
+                            </p>
+                            <div class="text-xs text-green-600 dark:text-green-400 font-medium">
+                                詳細を見る →
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative">
+                        <div class="bg-white/90 dark:bg-dark-800/90 backdrop-blur-sm rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 border border-white/30 dark:border-gray-700/50">
+                            <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                                <i data-lucide="code" class="w-10 h-10 text-white" style="color: white !important;"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4 font-jp">システム開発</h3>
+                            <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp text-sm mb-4">
+                                最新技術を活用したカスタムシステム開発
+                            </p>
+                            <div class="text-xs text-purple-600 dark:text-purple-400 font-medium">
+                                詳細を見る →
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- サービス概要 -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6 font-jp">サービス</h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-jp">
+                        お客様のビジネス成長をサポートする包括的なソリューション
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 text-center group hover:-translate-y-3 animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="brain" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4 font-jp">AI導入コンサルティング</h3>
+                        <p class="text-gray-600 leading-relaxed font-jp">
+                            AI技術を活用した業務効率化、データ分析、予測モデル構築など、お客様の課題に最適なAIソリューションを提供します
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 text-center group hover:-translate-y-3 animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="settings" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4 font-jp">システム運用サポート</h3>
+                        <p class="text-gray-600 leading-relaxed font-jp">
+                            24時間365日の監視体制で、お客様のシステムを安定稼働させ、業務継続性を確保します
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 text-center group hover:-translate-y-3 animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="trending-up" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4 font-jp">ECマーケティング支援</h3>
+                        <p class="text-gray-600 leading-relaxed font-jp">
+                            ECサイトの構築から運営、マーケティング戦略立案まで、デジタルマーケティングの全領域をサポートします
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 text-center group hover:-translate-y-3 animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 text-white group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                            <i data-lucide="code" class="w-10 h-10"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-primary mb-4 font-jp">システム開発</h3>
+                        <p class="text-gray-600 leading-relaxed font-jp">
+                            お客様のニーズに合わせたカスタムシステム開発から、既存システムの改修まで幅広く対応します
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 実績セクション -->
+        <section class="py-32 bg-gradient-to-br from-dark-900 via-primary-900 to-accent-900 relative overflow-hidden">
+            <!-- 動的背景エフェクト -->
+            <div class="absolute inset-0">
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iMyIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPgo8L3N2Zz4=')] opacity-40"></div>
+                <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-white/5 to-transparent"></div>
+            </div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <span class="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-medium text-white/90 border border-white/20 mb-6">
+                        <i data-lucide="trophy" class="w-4 h-4 inline mr-2"></i>
+                        実績と成果
+                    </span>
+                    <h2 class="text-5xl md:text-6xl font-black text-white mb-8 font-jp">
+                        数字が証明する<br class="hidden md:block">
+                        <span class="bg-gradient-to-r from-accent-400 to-primary-400 bg-clip-text text-transparent">信頼と実績</span>
+                    </h2>
+                    <p class="text-xl text-white/80 max-w-4xl mx-auto leading-relaxed font-jp">
+                        お客様の成功が、私たちの最大の成果です
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+                    <div class="group text-center p-8 bg-white/5 backdrop-blur-md rounded-3xl text-white border border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:-translate-y-4 hover:scale-105">
+                        <div class="relative mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                                <i data-lucide="users" class="w-12 h-12 text-white"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-accent-500 rounded-full flex items-center justify-center">
+                                <span class="text-xs font-bold text-white">+</span>
+                            </div>
+                        </div>
+                        <div class="text-4xl md:text-5xl font-black mb-2 counter" data-target="50">0</div>
+                        <div class="text-lg text-white/80 font-medium mb-2">導入実績</div>
+                        <div class="w-16 h-1 bg-gradient-to-r from-primary-400 to-accent-400 mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <div class="group text-center p-8 bg-white/5 backdrop-blur-md rounded-3xl text-white border border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:-translate-y-4 hover:scale-105">
+                        <div class="relative mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-accent-500 to-accent-600 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                                <i data-lucide="heart" class="w-12 h-12 text-white"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                <span class="text-xs font-bold text-white">%</span>
+                            </div>
+                        </div>
+                        <div class="text-4xl md:text-5xl font-black mb-2 counter" data-target="95">0</div>
+                        <div class="text-lg text-white/80 font-medium mb-2">顧客満足度</div>
+                        <div class="w-16 h-1 bg-gradient-to-r from-accent-400 to-green-400 mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <div class="group text-center p-8 bg-white/5 backdrop-blur-md rounded-3xl text-white border border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:-translate-y-4 hover:scale-105">
+                        <div class="relative mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-green-600 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                                <i data-lucide="trending-down" class="w-12 h-12 text-white"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                                <span class="text-xs font-bold text-white">%</span>
+                            </div>
+                        </div>
+                        <div class="text-4xl md:text-5xl font-black mb-2 counter" data-target="30">0</div>
+                        <div class="text-lg text-white/80 font-medium mb-2">コスト削減率</div>
+                        <div class="w-16 h-1 bg-gradient-to-r from-green-400 to-red-400 mx-auto rounded-full"></div>
+                    </div>
+                    
+                    <div class="group text-center p-8 bg-white/5 backdrop-blur-md rounded-3xl text-white border border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:-translate-y-4 hover:scale-105">
+                        <div class="relative mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                                <i data-lucide="clock" class="w-12 h-12 text-white"></i>
+                            </div>
+                            <div class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                <span class="text-xs font-bold text-white">h</span>
+                            </div>
+                        </div>
+                        <div class="text-4xl md:text-5xl font-black mb-2 counter" data-target="24">0</div>
+                        <div class="text-lg text-white/80 font-medium mb-2">時間サポート</div>
+                        <div class="w-16 h-1 bg-gradient-to-r from-purple-400 to-blue-400 mx-auto rounded-full"></div>
+                    </div>
+                </div>
+                
+                <!-- 動的グラフセクション -->
+                <div class="bg-white/5 backdrop-blur-md rounded-3xl p-8 border border-white/10">
+                    <h3 class="text-2xl font-bold text-white mb-8 text-center font-jp">成長実績</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="relative w-32 h-32 mx-auto mb-4">
+                                <svg class="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.1)" stroke-width="8" fill="none"/>
+                                    <circle cx="50" cy="50" r="40" stroke="url(#gradient1)" stroke-width="8" fill="none" 
+                                            stroke-dasharray="251.2" stroke-dashoffset="62.8" class="progress-circle" data-progress="75"/>
+                                    <defs>
+                                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#3b82f6"/>
+                                            <stop offset="100%" style="stop-color:#f59e0b"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">75%</span>
+                                </div>
+                            </div>
+                            <p class="text-white/80 font-medium">業務効率化</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="relative w-32 h-32 mx-auto mb-4">
+                                <svg class="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.1)" stroke-width="8" fill="none"/>
+                                    <circle cx="50" cy="50" r="40" stroke="url(#gradient2)" stroke-width="8" fill="none" 
+                                            stroke-dasharray="251.2" stroke-dashoffset="50.24" class="progress-circle" data-progress="80"/>
+                                    <defs>
+                                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#10b981"/>
+                                            <stop offset="100%" style="stop-color:#3b82f6"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">80%</span>
+                                </div>
+                            </div>
+                            <p class="text-white/80 font-medium">売上向上</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="relative w-32 h-32 mx-auto mb-4">
+                                <svg class="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.1)" stroke-width="8" fill="none"/>
+                                    <circle cx="50" cy="50" r="40" stroke="url(#gradient3)" stroke-width="8" fill="none" 
+                                            stroke-dasharray="251.2" stroke-dashoffset="37.68" class="progress-circle" data-progress="85"/>
+                                    <defs>
+                                        <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                            <stop offset="100%" style="stop-color:#10b981"/>
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <span class="text-2xl font-bold text-white">85%</span>
+                                </div>
+                            </div>
+                            <p class="text-white/80 font-medium">顧客満足度</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-32 bg-gradient-to-br from-white via-gray-50 to-primary-50 dark:from-dark-950 dark:via-dark-900 dark:to-primary-900 relative overflow-hidden">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxkZWZzPgo8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSg1OSwxMzAsMjM0LDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9wYXR0ZXJuPgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz4KPC9zdmc+')] opacity-30"></div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="animate-fade-in-up">
+                    <span class="inline-block px-6 py-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-8">
+                        <i data-lucide="rocket" class="w-4 h-4 inline mr-2"></i>
+                        今すぐ始めよう
+                    </span>
+                    <h2 class="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-8 font-jp">
+                        未来への第一歩を<br class="hidden md:block">
+                        <span class="bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent">踏み出しませんか？</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-16 max-w-5xl mx-auto leading-relaxed font-jp">
+                        無料相談で、あなたのビジネスの可能性を一緒に探りましょう
+                    </p>
+                    
+                    <!-- チャット風フォーム -->
+                    <div class="max-w-2xl mx-auto mb-16">
+                        <div class="bg-white dark:bg-dark-800 rounded-3xl p-8 shadow-2xl border border-gray-200/50 dark:border-gray-700/50">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center mr-4">
+                                    <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">ALLGENS サポート</h3>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">通常1時間以内にご返信いたします</p>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex space-x-4">
+                                    <button class="flex-1 bg-gray-100 dark:bg-dark-700 hover:bg-gray-200 dark:hover:bg-dark-600 text-gray-700 dark:text-gray-300 px-6 py-4 rounded-2xl font-medium transition-all duration-300 transform hover:-translate-y-1">
+                                        <i data-lucide="phone" class="w-5 h-5 inline mr-2"></i>
+                                        電話で相談
+                                    </button>
+                                    <button class="flex-1 bg-primary-600 hover:bg-primary-700 text-white px-6 py-4 rounded-2xl font-medium transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                                        <i data-lucide="mail" class="w-5 h-5 inline mr-2"></i>
+                                        メールで相談
+                                    </button>
+                                </div>
+                                
+                                <div class="flex space-x-4">
+                                    <button class="flex-1 bg-accent-600 hover:bg-accent-700 text-white px-6 py-4 rounded-2xl font-medium transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                                        <i data-lucide="download" class="w-5 h-5 inline mr-2"></i>
+                                        資料ダウンロード
+                                    </button>
+                                    <button class="flex-1 bg-green-600 hover:bg-green-700 text-white px-6 py-4 rounded-2xl font-medium transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
+                                        <i data-lucide="calendar" class="w-5 h-5 inline mr-2"></i>
+                                        オンライン面談
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 信頼の証 -->
+                    <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="shield-check" class="w-8 h-8 text-green-600 dark:text-green-400"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">完全無料</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">初回相談は完全無料</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="clock" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">迅速対応</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">24時間以内にご返信</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i data-lucide="lock" class="w-8 h-8 text-purple-600 dark:text-purple-400"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">機密保持</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">厳格な機密保持契約</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer class="bg-dark text-white relative overflow-hidden">
+        <!-- 背景パターン -->
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPgo8L3N2Zz4=')] opacity-50"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div class="md:col-span-2">
+                    <h3 class="text-3xl font-bold mb-6 font-jp">オールジェンス株式会社</h3>
+                    <p class="text-gray-200 mb-6 text-lg font-jp">テクノロジーで未来を切り拓く</p>
+                    <div class="space-y-3 text-gray-200">
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1 text-accent flex-shrink-0"></i>
+                            <div>
+                                <p>〒100-0001</p>
+                                <p>東京都千代田区千代田1-1-1</p>
+                                <p>サンプルビル5階</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 mr-3 text-accent"></i>
+                            <p>03-1234-5678</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-accent"></i>
+                            <p>info@allgens.co.jp</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-jp">サービス</h3>
+                    <ul class="space-y-3">
+                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="brain" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            AI導入コンサルティング
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="settings" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            システム運用サポート
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="trending-up" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            ECマーケティング支援
+                        </a></li>
+                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="code" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            システム開発
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-6 font-jp">会社情報</h3>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="building" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            会社概要
+                        </a></li>
+                        <li><a href="message.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="user" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            代表挨拶
+                        </a></li>
+                        <li><a href="contact.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            お問い合わせ
+                        </a></li>
+                        <li><a href="privacy.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
+                            <i data-lucide="shield" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
+                            プライバシーポリシー
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-300 mb-4 md:mb-0">&copy; 2024 オールジェンス株式会社. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="privacy.html" class="text-gray-300 hover:text-accent transition-colors duration-300">プライバシーポリシー</a>
+                        <a href="#" class="text-gray-300 hover:text-accent transition-colors duration-300">利用規約</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lucideアイコンの初期化
+        lucide.createIcons();
+
+        // GSAP初期化
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ダークモード切り替え
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            const isDark = html.classList.contains('dark');
+            
+            if (isDark) {
+                html.classList.remove('dark');
+                localStorage.setItem('darkMode', 'false');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('darkMode', 'true');
+            }
+        }
+
+        // ダークモード状態の復元
+        function initDarkMode() {
+            const savedMode = localStorage.getItem('darkMode');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            if (savedMode === 'true' || (savedMode === null && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            }
+        }
+
+        // カウンターアニメーション（最適化版）
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const startTime = performance.now();
+                
+                function updateCounter(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const current = Math.floor(target * progress);
+                    
+                    counter.textContent = current;
+                    
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    }
+                }
+                
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        // プログレスサークルアニメーション
+        function animateProgressCircles() {
+            const circles = document.querySelectorAll('.progress-circle');
+            
+            circles.forEach(circle => {
+                const progress = circle.getAttribute('data-progress');
+                const circumference = 2 * Math.PI * 40; // radius = 40
+                const offset = circumference - (progress / 100) * circumference;
+                
+                gsap.fromTo(circle, 
+                    { strokeDashoffset: circumference },
+                    { 
+                        strokeDashoffset: offset, 
+                        duration: 2, 
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: circle,
+                            start: "top 80%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+        }
+
+        // パーティクル背景（最適化版）
+        function createParticleBackground() {
+            const particleContainer = document.querySelector('.particle-bg');
+            if (!particleContainer) return;
+            
+            // 既存のパーティクルをクリア
+            const existingParticles = particleContainer.querySelectorAll('.particle');
+            existingParticles.forEach(particle => particle.remove());
+            
+            const particleCount = window.innerWidth < 768 ? 30 : 50; // モバイルでは少なく
+            const fragment = document.createDocumentFragment();
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle absolute w-1 h-1 bg-white/20 rounded-full';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animation = 'float 10s ease-in-out infinite';
+                particle.style.willChange = 'transform, opacity';
+                fragment.appendChild(particle);
+            }
+            
+            particleContainer.appendChild(fragment);
+        }
+
+        // ヒーローアニメーション
+        function initHeroAnimation() {
+            const tl = gsap.timeline();
+            
+            tl.from('.hero-content', {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: "power2.out"
+            })
+            .from('.hero-content h1', {
+                opacity: 0,
+                y: 30,
+                duration: 0.8,
+                ease: "power2.out"
+            }, "-=0.5")
+            .from('.hero-content p', {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: "power2.out"
+            }, "-=0.3")
+            .from('.hero-content a', {
+                opacity: 0,
+                y: 20,
+                duration: 0.6,
+                ease: "power2.out",
+                stagger: 0.1
+            }, "-=0.2");
+        }
+
+        // スクロールアニメーション
+        function initScrollAnimations() {
+            // フェードインアニメーション
+            gsap.utils.toArray('.animate-fade-in-up').forEach(element => {
+                gsap.fromTo(element, 
+                    { opacity: 0, y: 50 },
+                    { 
+                        opacity: 1, 
+                        y: 0, 
+                        duration: 0.8, 
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 85%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+
+            // スケールアニメーション
+            gsap.utils.toArray('.animate-scale-in').forEach(element => {
+                gsap.fromTo(element, 
+                    { opacity: 0, scale: 0.8 },
+                    { 
+                        opacity: 1, 
+                        scale: 1, 
+                        duration: 0.6, 
+                        ease: "back.out(1.7)",
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 85%",
+                            toggleActions: "play none none reverse"
+                        }
+                    }
+                );
+            });
+        }
+
+        // モバイルメニューの切り替え
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // フォーム送信処理（ダミー）
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert('お問い合わせありがとうございます。担当者より3営業日以内にご連絡いたします。');
+        }
+
+        // フォント読み込み完了の検出
+        function checkFontsLoaded() {
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(() => {
+                    document.documentElement.classList.add('fonts-loaded');
+                });
+            } else {
+                // フォールバック
+                setTimeout(() => {
+                    document.documentElement.classList.add('fonts-loaded');
+                }, 1000);
+            }
+        }
+
+        // ページ読み込み時の初期化
+        document.addEventListener('DOMContentLoaded', function() {
+            // フォント読み込み完了をチェック
+            checkFontsLoaded();
+            
+            // ビューポート安定化を最初に実行
+            stabilizeViewport();
+            
+            // Lucideアイコンの初期化を最初に実行
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+            
+            initDarkMode();
+            initHeroAnimation();
+            initScrollAnimations();
+            animateCounters();
+            animateProgressCircles();
+            createParticleBackground();
+            
+            // ダークモード切り替えボタンのイベント
+            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
+            
+            // アイコンの再初期化（遅延実行）
+            setTimeout(() => {
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+            }, 100);
+            
+            // 追加の初期化（フォント読み込み後）
+            setTimeout(() => {
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+                // ビューポート安定化も再実行
+                stabilizeViewport();
+            }, 500);
+        });
+
+        // ビューポート安定化のための処理
+        function stabilizeViewport() {
+            const heroSection = document.querySelector('.hero-section');
+            if (heroSection) {
+                // 現在のビューポート高さを取得
+                const vh = window.innerHeight;
+                const dvh = window.innerHeight; // フォールバック
+                
+                // 高さを設定
+                heroSection.style.height = `${vh}px`;
+                
+                // モバイルブラウザのアドレスバー対応
+                if (window.visualViewport) {
+                    heroSection.style.height = `${window.visualViewport.height}px`;
+                }
+            }
+        }
+
+        // リサイズ時の処理（最適化版）
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                stabilizeViewport();
+                ScrollTrigger.refresh();
+                // パーティクル背景を再生成
+                createParticleBackground();
+            }, 250);
+        });
+        
+        // ビューポート変更時の処理
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', function() {
+                stabilizeViewport();
+            });
+        }
+        
+        // ページ離脱時のクリーンアップ
+        window.addEventListener('beforeunload', function() {
+            ScrollTrigger.killAll();
+            gsap.killTweensOf("*");
+        });
+    </script>
+</body>
+</html>
