@@ -157,6 +157,22 @@ npm run type-check
 
 ## 🚀 デプロイ
 
+### GitHub Pages (静的サイト)
+このプロジェクトは静的HTMLファイルとしてGitHub Pagesでホスティングできます。
+
+1. **リポジトリの設定**
+   - GitHubリポジトリのSettings > Pages
+   - Source: "Deploy from a branch"
+   - Branch: "main" を選択
+
+2. **ファイル構成**
+   - `index.html` - メインページ
+   - `css/style.css` - スタイルシート
+   - `.nojekyll` - Jekyllを無効化（既に追加済み）
+
+3. **アクセス**
+   - `https://[username].github.io/[repository-name]` でアクセス可能
+
 ### Vercel (推奨)
 ```bash
 npm install -g vercel

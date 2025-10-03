@@ -43,10 +43,41 @@
         }
     }
     </script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- JavaScript Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" onload="lucide.createIcons()"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Fallback for CDN failures -->
+    <script>
+        // Check if external libraries loaded successfully
+        window.addEventListener('load', function() {
+            // Check Tailwind CSS
+            if (typeof tailwind === 'undefined') {
+                console.warn('Tailwind CSS failed to load from CDN');
+            }
+            
+            // Check Lucide
+            if (typeof lucide === 'undefined') {
+                console.warn('Lucide icons failed to load from CDN');
+                // Fallback: hide all lucide icons
+                document.querySelectorAll('[data-lucide]').forEach(icon => {
+                    icon.style.display = 'none';
+                });
+            }
+            
+            // Check GSAP
+            if (typeof gsap === 'undefined') {
+                console.warn('GSAP failed to load from CDN');
+                // Fallback: disable animations
+                document.body.classList.add('no-animations');
+            }
+        });
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -113,6 +144,33 @@
             .hero-section {
                 height: 100vh;
             }
+        }
+        
+        /* アニメーション無効時のフォールバック */
+        .no-animations * {
+            animation: none !important;
+            transition: none !important;
+        }
+        
+        .no-animations .animate-fade-in-up,
+        .no-animations .animate-fade-in-down,
+        .no-animations .animate-scale-in,
+        .no-animations .animate-slide-in-left,
+        .no-animations .animate-slide-in-right {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+        
+        /* アイコン読み込み失敗時のフォールバック */
+        [data-lucide] {
+            min-width: 1em;
+            min-height: 1em;
+        }
+        
+        [data-lucide]:not(.lucide-loaded)::before {
+            content: "●";
+            color: currentColor;
+            font-size: 0.8em;
         }
     </style>
     
@@ -1093,42 +1151,58 @@
 
         // ページ読み込み時の初期化
         document.addEventListener('DOMContentLoaded', function() {
-            // フォント読み込み完了をチェック
-            checkFontsLoaded();
-            
-            // ビューポート安定化を最初に実行
-            stabilizeViewport();
-            
-            // Lucideアイコンの初期化を最初に実行
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-            
-            initDarkMode();
-            initHeroAnimation();
-            initScrollAnimations();
-            animateCounters();
-            animateProgressCircles();
-            createParticleBackground();
-            
-            // ダークモード切り替えボタンのイベント
-            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
-            
-            // アイコンの再初期化（遅延実行）
-            setTimeout(() => {
-                if (typeof lucide !== 'undefined') {
-                    lucide.createIcons();
-                }
-            }, 100);
-            
-            // 追加の初期化（フォント読み込み後）
-            setTimeout(() => {
-                if (typeof lucide !== 'undefined') {
-                    lucide.createIcons();
-                }
-                // ビューポート安定化も再実行
+            try {
+                // フォント読み込み完了をチェック
+                checkFontsLoaded();
+                
+                // ビューポート安定化を最初に実行
                 stabilizeViewport();
-            }, 500);
+                
+                // Lucideアイコンの初期化を最初に実行
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+                
+                initDarkMode();
+                
+                // GSAPが利用可能な場合のみアニメーションを初期化
+                if (typeof gsap !== 'undefined') {
+                    initHeroAnimation();
+                    initScrollAnimations();
+                    animateProgressCircles();
+                } else {
+                    console.warn('GSAP not available, skipping animations');
+                }
+                
+                animateCounters();
+                createParticleBackground();
+                
+                // ダークモード切り替えボタンのイベント
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                if (darkModeToggle) {
+                    darkModeToggle.addEventListener('click', toggleDarkMode);
+                }
+                
+                // アイコンの再初期化（遅延実行）
+                setTimeout(() => {
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                }, 100);
+                
+                // 追加の初期化（フォント読み込み後）
+                setTimeout(() => {
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                    // ビューポート安定化も再実行
+                    stabilizeViewport();
+                }, 500);
+            } catch (error) {
+                console.error('Error during page initialization:', error);
+                // エラーが発生しても基本的な機能は動作するようにする
+                document.body.classList.add('no-animations');
+            }
         });
 
         // ビューポート安定化のための処理
@@ -1154,10 +1228,16 @@
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
-                stabilizeViewport();
-                ScrollTrigger.refresh();
-                // パーティクル背景を再生成
-                createParticleBackground();
+                try {
+                    stabilizeViewport();
+                    if (typeof ScrollTrigger !== 'undefined') {
+                        ScrollTrigger.refresh();
+                    }
+                    // パーティクル背景を再生成
+                    createParticleBackground();
+                } catch (error) {
+                    console.error('Error during resize handling:', error);
+                }
             }, 250);
         });
         
@@ -1170,8 +1250,16 @@
         
         // ページ離脱時のクリーンアップ
         window.addEventListener('beforeunload', function() {
-            ScrollTrigger.killAll();
-            gsap.killTweensOf("*");
+            try {
+                if (typeof ScrollTrigger !== 'undefined') {
+                    ScrollTrigger.killAll();
+                }
+                if (typeof gsap !== 'undefined') {
+                    gsap.killTweensOf("*");
+                }
+            } catch (error) {
+                console.error('Error during cleanup:', error);
+            }
         });
     </script>
 </body>
