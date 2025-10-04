@@ -6,237 +6,125 @@
     <title>会社概要 - オールジェンス株式会社</title>
     <meta name="description" content="オールジェンス株式会社の会社概要。設立年月、代表者、資本金、事業内容、所在地などの企業情報をご紹介します。">
     <meta name="keywords" content="会社概要,企業情報,オールジェンス,所在地,代表者">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://itsukitak3ura.github.io/allgens-corporate-site/about.html">
+    <meta property="og:title" content="会社概要 - オールジェンス株式会社">
+    <meta property="og:description" content="オールジェンス株式会社の会社概要。設立年月、代表者、資本金、事業内容、所在地などの企業情報をご紹介します。">
+    <meta property="og:image" content="https://itsukitak3ura.github.io/allgens-corporate-site/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://itsukitak3ura.github.io/allgens-corporate-site/about.html">
+    <meta property="twitter:title" content="会社概要 - オールジェンス株式会社">
+    <meta property="twitter:description" content="オールジェンス株式会社の会社概要。設立年月、代表者、資本金、事業内容、所在地などの企業情報をご紹介します。">
+    <meta property="twitter:image" content="https://itsukitak3ura.github.io/allgens-corporate-site/og-image.jpg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                            950: '#082f49',
-                        },
-                        dark: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            950: '#020617',
-                        },
-                        accent: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            200: '#fde68a',
-                            300: '#fcd34d',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                            800: '#92400e',
-                            900: '#78350f',
-                            950: '#451a03',
-                        }
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
-                        'jp': ['Noto Sans JP', 'sans-serif'],
-                        'en': ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.8s ease-out',
-                        'fade-in-up': 'fadeInUp 1s ease-out',
-                        'fade-in-down': 'fadeInDown 1s ease-out',
-                        'scale-in': 'scaleIn 0.6s ease-out',
-                        'slide-in-left': 'slideInLeft 0.8s ease-out',
-                        'slide-in-right': 'slideInRight 0.8s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s ease-in-out infinite',
-                        'bounce-slow': 'bounce 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        fadeInDown: {
-                            '0%': { opacity: '0', transform: 'translateY(-40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        scaleIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.8)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' },
-                        },
-                        slideInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-40px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(40px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                    },
-                    backdropBlur: {
-                        xs: '2px',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="canonical" href="https://allgens.co.jp/about.html">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="canonical" href="https://itsukitak3ura.github.io/allgens-corporate-site/about.html">
 </head>
-<body class="font-sans text-gray-800 bg-white dark:bg-dark-950 dark:text-white transition-colors duration-300">
-    <!-- ダークモード切り替えボタン -->
-    <button id="darkModeToggle" class="fixed top-4 right-4 z-50 p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
-        <i data-lucide="sun" class="w-5 h-5 text-white dark:hidden"></i>
-        <i data-lucide="moon" class="w-5 h-5 text-white hidden dark:block"></i>
-    </button>
-
-    <!-- ヘッダー -->
-    <header class="bg-white/80 dark:bg-dark-950/80 backdrop-blur-md shadow-lg fixed top-0 left-0 right-0 z-40 border-b border-gray-200/20 dark:border-gray-800/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="text-2xl font-bold text-primary-600 dark:text-primary-400 font-en tracking-tight">ALLGENS</a>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        ホーム
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="about.html" class="text-primary-600 dark:text-primary-400 font-bold relative">
-                        会社概要
-                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-600 dark:bg-primary-400"></span>
-                    </a>
-                    <a href="services.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        サービス
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="results.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        実績
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="message.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        代表挨拶
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="contact.html" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        お問い合わせ
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </nav>
-                <!-- モバイルメニューボタン -->
-                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
-                    <i data-lucide="menu" class="w-6 h-6 text-gray-700 dark:text-gray-300"></i>
-                </button>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="./index.html" class="logo-link">ALLGENS</a>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="./index.html" class="nav-link">ホーム</a>
+                    <a href="./about.html" class="nav-link active">会社概要</a>
+                    <a href="#services" class="nav-link">サービス</a>
+                    <a href="#results" class="nav-link">実績</a>
+                    <a href="./message.html" class="nav-link">代表挨拶</a>
+                    <a href="./contact.html" class="nav-link">お問い合わせ</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-        </div>
-        <!-- モバイルメニュー -->
-        <div id="mobileMenu" class="md:hidden bg-white/95 dark:bg-dark-950/95 backdrop-blur-md border-t border-gray-200/20 dark:border-gray-800/20 hidden">
-            <div class="px-4 py-2 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">ホーム</a>
-                <a href="about.html" class="block px-3 py-2 text-primary-600 dark:text-primary-400 font-bold">会社概要</a>
-                <a href="services.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">サービス</a>
-                <a href="results.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">実績</a>
-                <a href="message.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">代表挨拶</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">お問い合わせ</a>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- メインコンテンツ -->
-    <main class="pt-20">
-        <!-- ページヘッダー -->
-        <section class="relative py-32 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-dark-900 dark:via-dark-950 dark:to-dark-800 overflow-hidden">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIgZmlsbD0icmdiYSg1OSwxMzAsMjM0LDAuMSkiLz4KPC9zdmc+')] opacity-30"></div>
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="animate-fade-in-up">
-                    <span class="inline-block px-6 py-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-8">
-                        <i data-lucide="building" class="w-4 h-4 inline mr-2"></i>
-                        企業情報
-                    </span>
-                    <h1 class="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-8 font-jp">
-                        会社概要
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed font-jp">
-                        オールジェンス株式会社の企業情報
-                    </p>
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="hero">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-building"></i>
+                    企業情報
                 </div>
+                <h1 class="hero-title">
+                    <span class="hero-title-line">会社概要</span>
+                </h1>
+                <p class="hero-description">
+                    オールジェンス株式会社の企業情報
+                </p>
             </div>
         </section>
 
-        <!-- 会社概要コンテンツ -->
-        <section class="py-20 bg-white dark:bg-dark-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Company Overview Content -->
+        <section class="section">
+            <div class="container">
                 <div class="grid lg:grid-cols-2 gap-12 items-start">
-                    <div class="animate-fade-in-up">
-                        <h2 class="text-3xl font-bold text-primary-600 dark:text-primary-400 mb-6 font-jp">企業理念</h2>
-                        <div class="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed font-jp">
-                            <p>オールジェンス株式会社は、テクノロジーの力を活用して、お客様のビジネス課題を解決し、持続的な成長を実現することを使命としています。</p>
+                    <div class="fade-in-left">
+                        <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">企業理念</h2>
+                        <div style="color: #64748B; line-height: 1.8;">
+                            <p style="margin-bottom: 24px;">オールジェンス株式会社は、テクノロジーの力を活用して、お客様のビジネス課題を解決し、持続的な成長を実現することを使命としています。</p>
                             
-                            <p>私たちは、AI導入コンサルティング、システム運用サポート、ECマーケティング支援を通じて、お客様のデジタル変革をサポートし、より良い未来の創造に貢献します。</p>
+                            <p style="margin-bottom: 24px;">私たちは、AI導入コンサルティング、システム運用サポート、ECマーケティング支援を通じて、お客様のデジタル変革をサポートし、より良い未来の創造に貢献します。</p>
                             
                             <p>お客様第一主義、技術革新、誠実なパートナーシップを価値観として掲げ、信頼できるパートナーとして、お客様と共に成長していきます。</p>
                         </div>
                     </div>
                     
-                    <div class="bg-gradient-to-br from-primary-600 to-primary-800 dark:from-primary-700 dark:to-primary-900 rounded-xl p-8 text-white shadow-2xl animate-scale-in">
-                        <h2 class="text-2xl font-bold mb-6 font-jp">企業情報</h2>
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-start">
-                                <span class="font-semibold">会社名</span>
-                                <span class="text-right">オールジェンス株式会社</span>
+                    <div class="fade-in-right" style="background: linear-gradient(135deg, #38BDF8 0%, #0EA5E9 100%); border-radius: 16px; padding: 32px; color: white; box-shadow: 0 20px 40px rgba(56, 189, 248, 0.3);">
+                        <h2 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 24px;">企業情報</h2>
+                        <div style="display: grid; gap: 16px;">
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <span style="font-weight: 600;">会社名</span>
+                                <span style="text-align: right;">オールジェンス株式会社</span>
                             </div>
-                            <div class="flex justify-between items-start">
-                                <span class="font-semibold">所在地</span>
-                                <span class="text-right">〒100-0001<br>東京都千代田区千代田1-1-1<br>サンプルビル5階</span>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <span style="font-weight: 600;">所在地</span>
+                                <span style="text-align: right;">〒100-0001<br>東京都千代田区千代田1-1-1<br>バーチャルオフィス</span>
                             </div>
-                            <div class="flex justify-between items-start">
-                                <span class="font-semibold">設立年月</span>
-                                <span class="text-right">2024年4月</span>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <span style="font-weight: 600;">設立年月</span>
+                                <span style="text-align: right;">2024年4月</span>
                             </div>
-                            <div class="flex justify-between items-start">
-                                <span class="font-semibold">代表者</span>
-                                <span class="text-right">代表取締役 田中 太郎</span>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <span style="font-weight: 600;">代表者</span>
+                                <span style="text-align: right;">代表取締役 田中 太郎</span>
                             </div>
-                            <div class="flex justify-between items-start">
-                                <span class="font-semibold">資本金</span>
-                                <span class="text-right">1,000万円</span>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <span style="font-weight: 600;">資本金</span>
+                                <span style="text-align: right;">1,000万円</span>
                             </div>
-                            <div class="flex justify-between items-start">
-                                <span class="font-semibold">従業員数</span>
-                                <span class="text-right">15名</span>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <span style="font-weight: 600;">従業員数</span>
+                                <span style="text-align: right;">15名</span>
                             </div>
-                            <div class="flex justify-between items-start">
-                                <span class="font-semibold">事業内容</span>
-                                <span class="text-right">AI導入コンサルティング<br>システム運用サポート<br>ECマーケティング支援<br>システム開発</span>
+                            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                <span style="font-weight: 600;">事業内容</span>
+                                <span style="text-align: right;">AI導入コンサルティング<br>システム運用サポート<br>ECマーケティング支援<br>システム開発</span>
                             </div>
                         </div>
                     </div>
@@ -244,53 +132,53 @@
             </div>
         </section>
 
-        <!-- 事業内容詳細 -->
-        <section class="py-20 bg-gray-50 dark:bg-dark-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate-fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">事業内容</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-jp">
+        <!-- Business Details -->
+        <section class="section" style="background: #F8FAFC;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">事業内容</h2>
+                    <p class="section-description">
                         お客様のビジネス成長をサポートする包括的なソリューション
                     </p>
                 </div>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center group hover:-translate-y-2 animate-scale-in">
-                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="brain" class="w-10 h-10"></i>
+                    <div class="fade-in-up" style="background: white; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 32px; text-align: center; transition: all 0.3s ease; border: 1px solid #E2E8F0;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #38BDF8, #0EA5E9); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: white; font-size: 32px; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);">
+                            <i class="fas fa-brain"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">AI導入コンサルティング</h3>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">AI導入コンサルティング</h3>
+                        <p style="color: #64748B; line-height: 1.6;">
                             AI技術を活用した業務効率化、データ分析、予測モデル構築など、お客様の課題に最適なAIソリューションを提供します。導入から運用まで一貫してサポートします。
                         </p>
                     </div>
                     
-                    <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center group hover:-translate-y-2 animate-scale-in">
-                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="settings" class="w-10 h-10"></i>
+                    <div class="fade-in-up" style="background: white; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 32px; text-align: center; transition: all 0.3s ease; border: 1px solid #E2E8F0;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #38BDF8, #0EA5E9); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: white; font-size: 32px; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);">
+                            <i class="fas fa-cogs"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">システム運用サポート</h3>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">システム運用サポート</h3>
+                        <p style="color: #64748B; line-height: 1.6;">
                             24時間365日の監視体制で、お客様のシステムを安定稼働させ、業務継続性を確保します。障害対応から予防保守まで包括的にサポートします。
                         </p>
                     </div>
                     
-                    <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center group hover:-translate-y-2 animate-scale-in">
-                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="trending-up" class="w-10 h-10"></i>
+                    <div class="fade-in-up" style="background: white; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 32px; text-align: center; transition: all 0.3s ease; border: 1px solid #E2E8F0;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #38BDF8, #0EA5E9); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: white; font-size: 32px; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);">
+                            <i class="fas fa-chart-bar"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">ECマーケティング支援</h3>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">ECマーケティング支援</h3>
+                        <p style="color: #64748B; line-height: 1.6;">
                             ECサイトの構築から運営、マーケティング戦略立案まで、デジタルマーケティングの全領域をサポートします。売上向上を目指します。
                         </p>
                     </div>
                     
-                    <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center group hover:-translate-y-2 animate-scale-in">
-                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="code" class="w-10 h-10"></i>
+                    <div class="fade-in-up" style="background: white; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 32px; text-align: center; transition: all 0.3s ease; border: 1px solid #E2E8F0;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #38BDF8, #0EA5E9); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; color: white; font-size: 32px; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);">
+                            <i class="fas fa-code"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">システム開発</h3>
-                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed font-jp">
+                        <h3 style="font-size: 1.25rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">システム開発</h3>
+                        <p style="color: #64748B; line-height: 1.6;">
                             お客様のニーズに合わせたカスタムシステム開発から、既存システムの改修まで幅広く対応します。最新技術を活用した高品質なシステムを提供します。
                         </p>
                     </div>
@@ -298,260 +186,113 @@
             </div>
         </section>
 
-        <!-- 取引先 -->
-        <section class="py-20 bg-white dark:bg-dark-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate-fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">取引先</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-jp">
-                        信頼いただいているお客様
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 dark:bg-dark-800 border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-xl p-16 text-center animate-scale-in">
-                    <div class="text-6xl mb-4">🚀</div>
-                    <h3 class="text-2xl font-bold text-gray-600 dark:text-gray-300 mb-4 font-jp">Coming Soon</h3>
-                    <p class="text-gray-500 dark:text-gray-400 max-w-md mx-auto font-jp">
-                        取引先情報は準備中です。<br>お客様のご要望に応じて、適切なタイミングで公開いたします。
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- アクセス -->
-        <section class="py-20 bg-gray-50 dark:bg-dark-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate-fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">アクセス</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto font-jp">
+        <!-- Access Information -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">アクセス</h2>
+                    <p class="section-description">
                         オールジェンス株式会社へのアクセス情報
                     </p>
                 </div>
                 
                 <div class="grid lg:grid-cols-2 gap-12">
-                    <div class="animate-fade-in-up">
-                        <h3 class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6 font-jp">交通アクセス</h3>
-                        <div class="space-y-4 text-gray-600 dark:text-gray-300">
-                            <div class="flex items-start">
-                                <div class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <div class="fade-in-left">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 24px;">交通アクセス</h3>
+                        <div style="color: #64748B;">
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 16px;">
+                                <div style="width: 8px; height: 8px; background: #38BDF8; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
                                 <div>
-                                    <p class="font-semibold font-jp">JR山手線・中央線・総武線「東京駅」</p>
-                                    <p class="font-jp">徒歩5分</p>
+                                    <p style="font-weight: 600; margin-bottom: 4px;">JR山手線・中央線・総武線「東京駅」</p>
+                                    <p>徒歩5分</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <div class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 16px;">
+                                <div style="width: 8px; height: 8px; background: #38BDF8; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
                                 <div>
-                                    <p class="font-semibold font-jp">東京メトロ丸ノ内線「東京駅」</p>
-                                    <p class="font-jp">徒歩3分</p>
+                                    <p style="font-weight: 600; margin-bottom: 4px;">東京メトロ丸ノ内線「東京駅」</p>
+                                    <p>徒歩3分</p>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <div class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                            <div style="display: flex; align-items: flex-start; margin-bottom: 16px;">
+                                <div style="width: 8px; height: 8px; background: #38BDF8; border-radius: 50%; margin-top: 8px; margin-right: 12px; flex-shrink: 0;"></div>
                                 <div>
-                                    <p class="font-semibold font-jp">東京メトロ東西線「大手町駅」</p>
-                                    <p class="font-jp">徒歩7分</p>
+                                    <p style="font-weight: 600; margin-bottom: 4px;">東京メトロ東西線「大手町駅」</p>
+                                    <p>徒歩7分</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <h3 class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6 mt-8 font-jp">お車でお越しの場合</h3>
-                        <p class="text-gray-600 dark:text-gray-300 font-jp">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 24px; margin-top: 32px;">お車でお越しの場合</h3>
+                        <p style="color: #64748B;">
                             近隣にコインパーキングがございます。<br>
                             お車でお越しの際は、事前にご連絡ください。
                         </p>
                     </div>
                     
-                    <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg overflow-hidden animate-scale-in">
+                    <div class="fade-in-right" style="background: white; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); overflow: hidden;">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.4880305798474!2d139.763936!3d35.681236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f6b7b%3A0xadb4a83c0b0b0b0b!2z5p2x5Lqs6YO95rih6Kmy5Yy6!5e0!3m2!1sja!2sjp!4v1234567890123!5m2!1sja!2sjp" 
-                                class="w-full h-80 border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                style="width: 100%; height: 320px; border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- フッター -->
-    <footer class="bg-dark text-white relative overflow-hidden">
-        <!-- 背景パターン -->
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPgo8L3N2Zz4=')] opacity-50"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-2">
-                    <h3 class="text-3xl font-bold mb-6 font-jp">オールジェンス株式会社</h3>
-                    <p class="text-gray-200 mb-6 text-lg font-jp">テクノロジーで未来を切り拓く</p>
-                    <div class="space-y-3 text-gray-200">
-                        <div class="flex items-start">
-                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1 text-accent flex-shrink-0"></i>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3 class="footer-title">オールジェンス株式会社</h3>
+                    <p class="footer-description">テクノロジーで未来を切り拓く</p>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <p>〒100-0001</p>
                                 <p>東京都千代田区千代田1-1-1</p>
-                                <p>サンプルビル5階</p>
+                                <p>バーチャルオフィス</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i data-lucide="phone" class="w-5 h-5 mr-3 text-accent"></i>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
                             <p>03-1234-5678</p>
                         </div>
-                        <div class="flex items-center">
-                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-accent"></i>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
                             <p>info@allgens.co.jp</p>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-6 font-jp">サービス</h3>
-                    <ul class="space-y-3">
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="brain" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            AI導入コンサルティング
-                        </a></li>
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="settings" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            システム運用サポート
-                        </a></li>
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="trending-up" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            ECマーケティング支援
-                        </a></li>
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="code" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            システム開発
-                        </a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-6 font-jp">会社情報</h3>
-                    <ul class="space-y-3">
-                        <li><a href="about.html" class="text-accent font-medium flex items-center group">
-                            <i data-lucide="building" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            会社概要
-                        </a></li>
-                        <li><a href="message.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="user" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            代表挨拶
-                        </a></li>
-                        <li><a href="contact.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="mail" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            お問い合わせ
-                        </a></li>
-                        <li><a href="privacy.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="shield" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            プライバシーポリシー
-                        </a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">サービス</h4>
+                        <ul class="footer-list">
+                            <li><a href="#services">AI導入コンサルティング</a></li>
+                            <li><a href="#services">システム運用サポート</a></li>
+                            <li><a href="#services">ECマーケティング支援</a></li>
+                            <li><a href="#services">システム開発</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">会社情報</h4>
+                        <ul class="footer-list">
+                            <li><a href="./about.html">会社概要</a></li>
+                            <li><a href="./message.html">代表挨拶</a></li>
+                            <li><a href="./contact.html">お問い合わせ</a></li>
+                            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-600 pt-8 text-center text-gray-200">
-                <p class="font-jp">&copy; 2024 オールジェンス株式会社. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 オールジェンス株式会社. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Lucideアイコンの初期化
-        lucide.createIcons();
-
-        // GSAP初期化
-        gsap.registerPlugin(ScrollTrigger);
-
-        // ダークモード切り替え
-        function toggleDarkMode() {
-            const html = document.documentElement;
-            const isDark = html.classList.contains('dark');
-            
-            if (isDark) {
-                html.classList.remove('dark');
-                localStorage.setItem('darkMode', 'false');
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('darkMode', 'true');
-            }
-        }
-
-        // ダークモード状態の復元
-        function initDarkMode() {
-            const savedMode = localStorage.getItem('darkMode');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (savedMode === 'true' || (savedMode === null && prefersDark)) {
-                document.documentElement.classList.add('dark');
-            }
-        }
-
-        // スクロールアニメーション
-        function initScrollAnimations() {
-            // フェードインアニメーション
-            gsap.utils.toArray('.animate-fade-in-up').forEach(element => {
-                gsap.fromTo(element, 
-                    { opacity: 0, y: 50 },
-                    { 
-                        opacity: 1, 
-                        y: 0, 
-                        duration: 0.8, 
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: element,
-                            start: "top 85%",
-                            toggleActions: "play none none reverse"
-                        }
-                    }
-                );
-            });
-
-            // スケールアニメーション
-            gsap.utils.toArray('.animate-scale-in').forEach(element => {
-                gsap.fromTo(element, 
-                    { opacity: 0, scale: 0.8 },
-                    { 
-                        opacity: 1, 
-                        scale: 1, 
-                        duration: 0.6, 
-                        ease: "back.out(1.7)",
-                        scrollTrigger: {
-                            trigger: element,
-                            start: "top 85%",
-                            toggleActions: "play none none reverse"
-                        }
-                    }
-                );
-            });
-        }
-
-        // モバイルメニューの切り替え
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        // スムーススクロール
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // ページ読み込み時の初期化
-        document.addEventListener('DOMContentLoaded', function() {
-            initDarkMode();
-            initScrollAnimations();
-            
-            // ダークモード切り替えボタンのイベント
-            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
-        });
-
-        // リサイズ時の処理
-        window.addEventListener('resize', function() {
-            ScrollTrigger.refresh();
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
 </body>
 </html>

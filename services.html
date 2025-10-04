@@ -4,557 +4,216 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>サービス - オールジェンス株式会社</title>
-    <meta name="description" content="オールジェンス株式会社のサービス一覧。AI導入コンサルティング、システム運用サポート、ECマーケティング支援、システム開発など、お客様のビジネス成長をサポートします。">
-    <meta name="keywords" content="AI導入,システム運用,ECマーケティング,システム開発,コンサルティング">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <meta name="description" content="オールジェンス株式会社のサービス一覧。AI導入コンサルティング、システム運用サポート、ECマーケティング支援、システム開発を提供しています。">
+    <meta name="keywords" content="サービス,AI導入,システム運用,ECマーケティング,システム開発,コンサルティング">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://itsukitak3ura.github.io/allgens-corporate-site/services.html">
+    <meta property="og:title" content="サービス - オールジェンス株式会社">
+    <meta property="og:description" content="オールジェンス株式会社のサービス一覧。AI導入コンサルティング、システム運用サポート、ECマーケティング支援、システム開発を提供しています。">
+    <meta property="og:image" content="https://itsukitak3ura.github.io/allgens-corporate-site/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://itsukitak3ura.github.io/allgens-corporate-site/services.html">
+    <meta property="twitter:title" content="サービス - オールジェンス株式会社">
+    <meta property="twitter:description" content="オールジェンス株式会社のサービス一覧。AI導入コンサルティング、システム運用サポート、ECマーケティング支援、システム開発を提供しています。">
+    <meta property="twitter:image" content="https://itsukitak3ura.github.io/allgens-corporate-site/og-image.jpg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                            950: '#082f49',
-                        },
-                        dark: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            950: '#020617',
-                        },
-                        accent: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            200: '#fde68a',
-                            300: '#fcd34d',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                            800: '#92400e',
-                            900: '#78350f',
-                            950: '#451a03',
-                        }
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
-                        'jp': ['Noto Sans JP', 'sans-serif'],
-                        'en': ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.8s ease-out',
-                        'fade-in-up': 'fadeInUp 1s ease-out',
-                        'fade-in-down': 'fadeInDown 1s ease-out',
-                        'scale-in': 'scaleIn 0.6s ease-out',
-                        'slide-in-left': 'slideInLeft 0.8s ease-out',
-                        'slide-in-right': 'slideInRight 0.8s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s ease-in-out infinite',
-                        'bounce-slow': 'bounce 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        fadeInDown: {
-                            '0%': { opacity: '0', transform: 'translateY(-40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        scaleIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.8)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' },
-                        },
-                        slideInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-40px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(40px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                    },
-                    backdropBlur: {
-                        xs: '2px',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="canonical" href="https://allgens.co.jp/services.html">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="canonical" href="https://itsukitak3ura.github.io/allgens-corporate-site/services.html">
 </head>
-<body class="font-sans text-gray-800 bg-white dark:bg-dark-950 dark:text-white transition-colors duration-300">
-    <!-- ダークモード切り替えボタン -->
-    <button id="darkModeToggle" class="fixed top-4 right-4 z-50 p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300">
-        <i data-lucide="sun" class="w-5 h-5 text-white dark:hidden"></i>
-        <i data-lucide="moon" class="w-5 h-5 text-white hidden dark:block"></i>
-    </button>
-
-    <!-- ヘッダー -->
-    <header class="bg-white/80 dark:bg-dark-950/80 backdrop-blur-md shadow-lg fixed top-0 left-0 right-0 z-40 border-b border-gray-200/20 dark:border-gray-800/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="text-2xl font-bold text-primary-600 dark:text-primary-400 font-en tracking-tight">ALLGENS</a>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        ホーム
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="about.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        会社概要
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="services.html" class="text-primary-600 dark:text-primary-400 font-bold relative">
-                        サービス
-                        <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary-600 dark:bg-primary-400"></span>
-                    </a>
-                    <a href="results.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        実績
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="message.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        代表挨拶
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="contact.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        お問い合わせ
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </nav>
-                <!-- モバイルメニューボタン -->
-                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
-                    <i data-lucide="menu" class="w-6 h-6 text-gray-700 dark:text-gray-200"></i>
-                </button>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="./index.html" class="logo-link">ALLGENS</a>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="./index.html" class="nav-link">ホーム</a>
+                    <a href="./about.html" class="nav-link">会社概要</a>
+                    <a href="./services.html" class="nav-link active">サービス</a>
+                    <a href="./results.html" class="nav-link">実績</a>
+                    <a href="./message.html" class="nav-link">代表挨拶</a>
+                    <a href="./contact.html" class="nav-link">お問い合わせ</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-        </div>
-        <!-- モバイルメニュー -->
-        <div id="mobileMenu" class="md:hidden bg-white/95 dark:bg-dark-950/95 backdrop-blur-md border-t border-gray-200/20 dark:border-gray-800/20 hidden">
-            <div class="px-4 py-2 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">ホーム</a>
-                <a href="about.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">会社概要</a>
-                <a href="services.html" class="block px-3 py-2 text-primary-600 dark:text-primary-400 font-bold">サービス</a>
-                <a href="results.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">実績</a>
-                <a href="message.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">代表挨拶</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">お問い合わせ</a>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- メインコンテンツ -->
-    <main class="pt-20">
-        <!-- ページヘッダー -->
-        <section class="relative py-32 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-dark-900 dark:via-dark-950 dark:to-dark-800 overflow-hidden">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIgZmlsbD0icmdiYSg1OSwxMzAsMjM0LDAuMSkiLz4KPC9zdmc+')] opacity-30"></div>
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="animate-fade-in-up">
-                    <span class="inline-block px-6 py-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-8">
-                        <i data-lucide="settings" class="w-4 h-4 inline mr-2"></i>
-                        サービス
-                    </span>
-                    <h1 class="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-8 font-jp">
-                        サービス
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed font-jp">
-                        お客様のビジネス成長をサポートする包括的なソリューション
-                    </p>
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="hero">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-cogs"></i>
+                    サービス
                 </div>
+                <h1 class="hero-title">
+                    <span class="hero-title-line">サービス</span>
+                </h1>
+                <p class="hero-description">
+                    お客様のビジネス成長をサポートする包括的なソリューション
+                </p>
             </div>
         </section>
 
-        <!-- サービス一覧 -->
-        <section class="py-20 bg-white dark:bg-dark-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center group hover:-translate-y-2 animate-scale-in">
-                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="brain" class="w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">AI導入コンサルティング</h3>
-                        <p class="text-gray-600 dark:text-gray-200 leading-relaxed mb-6 font-jp">
-                            AI技術を活用した業務効率化、データ分析、予測モデル構築など、お客様の課題に最適なAIソリューションを提供します。
-                        </p>
-                        <ul class="text-left text-sm text-gray-600 dark:text-gray-200 space-y-2">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                AI戦略立案・企画
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                データ分析・可視化
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                機械学習モデル構築
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                AIシステム導入支援
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                運用・保守サポート
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center group hover:-translate-y-2 animate-scale-in">
-                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="settings" class="w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">システム運用サポート</h3>
-                        <p class="text-gray-600 dark:text-gray-200 leading-relaxed mb-6 font-jp">
-                            24時間365日の監視体制で、お客様のシステムを安定稼働させ、業務継続性を確保します。
-                        </p>
-                        <ul class="text-left text-sm text-gray-600 dark:text-gray-200 space-y-2">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                24時間365日監視
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                障害対応・復旧作業
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                予防保守・メンテナンス
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                セキュリティ対策
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                パフォーマンス最適化
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center group hover:-translate-y-2 animate-scale-in">
-                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="trending-up" class="w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">ECマーケティング支援</h3>
-                        <p class="text-gray-600 dark:text-gray-200 leading-relaxed mb-6 font-jp">
-                            ECサイトの構築から運営、マーケティング戦略立案まで、デジタルマーケティングの全領域をサポートします。
-                        </p>
-                        <ul class="text-left text-sm text-gray-600 dark:text-gray-200 space-y-2">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                ECサイト構築・改修
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                SEO対策・SEM運用
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                SNSマーケティング
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                コンテンツマーケティング
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                データ分析・改善提案
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-8 text-center group hover:-translate-y-2 animate-scale-in">
-                        <div class="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-white group-hover:scale-110 transition-transform duration-300">
-                            <i data-lucide="code" class="w-10 h-10"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">システム開発</h3>
-                        <p class="text-gray-600 dark:text-gray-200 leading-relaxed mb-6 font-jp">
-                            お客様のニーズに合わせたカスタムシステム開発から、既存システムの改修まで幅広く対応します。
-                        </p>
-                        <ul class="text-left text-sm text-gray-600 dark:text-gray-200 space-y-2">
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                Webアプリケーション開発
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                モバイルアプリ開発
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                既存システム改修
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                API開発・連携
-                            </li>
-                            <li class="flex items-center">
-                                <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mr-2"></span>
-                                クラウド移行支援
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- サービス詳細 -->
-        <section class="py-20 bg-gray-50 dark:bg-dark-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16 animate-fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">サービス詳細</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-200 max-w-3xl mx-auto font-jp">
-                        各サービスの詳細な内容と特徴
+        <!-- Services Content -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">サービス一覧</h2>
+                    <p class="section-description">
+                        テクノロジーの力で、お客様のビジネス課題を解決します
                     </p>
                 </div>
                 
-                <!-- AI導入コンサルティング -->
-                <div class="mb-16 animate-fade-in-up">
-                    <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="services-grid">
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">AI導入コンサルティング</h3>
+                            <p class="service-description">
+                                AI技術を活用した業務効率化、データ分析、予測モデル構築など、お客様の課題に最適なAIソリューションを提供します。
+                            </p>
+                            <ul class="service-features">
+                                <li>AI戦略立案・企画</li>
+                                <li>データ分析・可視化</li>
+                                <li>機械学習モデル構築</li>
+                                <li>AIシステム導入支援</li>
+                                <li>運用・保守サポート</li>
+                            </ul>
+                            <a href="./contact.html" class="service-link">詳細を見る <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">システム運用サポート</h3>
+                            <p class="service-description">
+                                24時間365日の監視体制で、お客様のシステムを安定稼働させ、業務継続性を確保します。
+                            </p>
+                            <ul class="service-features">
+                                <li>24時間365日監視</li>
+                                <li>障害対応・復旧作業</li>
+                                <li>パフォーマンス最適化</li>
+                                <li>セキュリティ対策</li>
+                                <li>定期メンテナンス</li>
+                            </ul>
+                            <a href="./contact.html" class="service-link">詳細を見る <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">ECマーケティング支援</h3>
+                            <p class="service-description">
+                                ECサイトの構築から運営、マーケティング戦略立案まで、デジタルマーケティングの全領域をサポートします。
+                            </p>
+                            <ul class="service-features">
+                                <li>ECサイト構築・運営</li>
+                                <li>SEO対策・SEM運用</li>
+                                <li>SNSマーケティング</li>
+                                <li>データ分析・改善提案</li>
+                                <li>コンテンツマーケティング</li>
+                            </ul>
+                            <a href="./contact.html" class="service-link">詳細を見る <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card fade-in-up">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">システム開発</h3>
+                            <p class="service-description">
+                                お客様のニーズに合わせたカスタムシステム開発から、既存システムの改修まで幅広く対応します。
+                            </p>
+                            <ul class="service-features">
+                                <li>Webアプリケーション開発</li>
+                                <li>モバイルアプリ開発</li>
+                                <li>API開発・連携</li>
+                                <li>データベース設計</li>
+                                <li>クラウド移行支援</li>
+                            </ul>
+                            <a href="./contact.html" class="service-link">詳細を見る <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="section" style="background: #F8FAFC;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">サービス提供プロセス</h2>
+                    <p class="section-description">
+                        お客様との信頼関係を築きながら、確実な成果を提供します
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr; gap: 32px;">
+                    <div class="fade-in-up" style="display: flex; align-items: center; gap: 24px; background: white; padding: 32px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #E2E8F0;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #38BDF8, #0EA5E9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: 700; flex-shrink: 0;">1</div>
                         <div>
-                            <h3 class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6 font-jp">AI導入コンサルティング</h3>
-                            <div class="space-y-4 text-gray-600 dark:text-gray-200 leading-relaxed font-jp">
-                                <p>AI技術の急速な発展により、ビジネスにおけるAI活用の重要性が高まっています。しかし、AI導入には専門的な知識と経験が必要です。</p>
-                                
-                                <p>私たちは、お客様のビジネス課題を深く理解し、最適なAIソリューションを提案します。データ分析から機械学習モデル構築、システム導入まで一貫してサポートし、AI活用による業務効率化と競争力向上を実現します。</p>
-                                
-                                <h4 class="text-lg font-semibold text-primary-600 dark:text-primary-400 mt-6 mb-3 font-jp">主な特徴</h4>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        お客様の業界・業務に特化したAI戦略立案
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        豊富な実績に基づく最適な技術選択
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        導入から運用まで一貫したサポート
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary-600 dark:bg-primary-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        ROIを重視した効果測定・改善提案
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg p-8 animate-scale-in">
-                            <h4 class="text-xl font-bold text-primary-600 dark:text-primary-400 mb-6 font-jp">導入事例</h4>
-                            <div class="space-y-6">
-                                <div class="border-l-4 border-primary-600 dark:border-primary-400 pl-4">
-                                    <h5 class="font-semibold text-gray-800 dark:text-gray-200 font-jp">製造業A社</h5>
-                                    <p class="text-gray-600 dark:text-gray-200 text-sm font-jp">品質検査の自動化により、検査時間を70%短縮</p>
-                                </div>
-                                <div class="border-l-4 border-primary-600 dark:border-primary-400 pl-4">
-                                    <h5 class="font-semibold text-gray-800 dark:text-gray-200 font-jp">小売業B社</h5>
-                                    <p class="text-gray-600 dark:text-gray-200 text-sm font-jp">需要予測により、在庫最適化でコストを30%削減</p>
-                                </div>
-                                <div class="border-l-4 border-primary-600 dark:border-primary-400 pl-4">
-                                    <h5 class="font-semibold text-gray-800 dark:text-gray-200 font-jp">サービス業C社</h5>
-                                    <p class="text-gray-600 dark:text-gray-200 text-sm font-jp">顧客対応の自動化により、対応時間を50%短縮</p>
-                                </div>
-                            </div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;">ヒアリング・分析</h3>
+                            <p style="color: #64748B; line-height: 1.6;">お客様のビジネス課題を詳しくヒアリングし、現状を分析します。</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- システム運用サポート -->
-                <div class="mb-16">
-                    <div class="grid lg:grid-cols-2 gap-12 items-start">
-                        <div class="bg-white rounded-xl shadow-lg p-8 order-2 lg:order-1">
-                            <h4 class="text-xl font-bold text-primary mb-6">監視体制</h4>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <div class="w-3 h-3 bg-primary rounded-full mt-1 mr-3 flex-shrink-0"></div>
-                                    <div>
-                                        <h5 class="font-semibold text-gray-800">24時間365日監視</h5>
-                                        <p class="text-gray-600 text-sm">専門スタッフによる継続的な監視体制</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="w-3 h-3 bg-primary rounded-full mt-1 mr-3 flex-shrink-0"></div>
-                                    <div>
-                                        <h5 class="font-semibold text-gray-800">即座の障害対応</h5>
-                                        <p class="text-gray-600 text-sm">平均復旧時間15分以内の迅速な対応</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="w-3 h-3 bg-primary rounded-full mt-1 mr-3 flex-shrink-0"></div>
-                                    <div>
-                                        <h5 class="font-semibold text-gray-800">予防保守</h5>
-                                        <p class="text-gray-600 text-sm">定期的なメンテナンスで障害を未然に防止</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="order-1 lg:order-2">
-                            <h3 class="text-2xl font-bold text-primary mb-6">システム運用サポート</h3>
-                            <div class="space-y-4 text-gray-600 leading-relaxed">
-                                <p>システムの安定稼働は、ビジネスの継続性に直結します。障害発生時の迅速な対応と、予防的な保守により、お客様のビジネスを支えます。</p>
-                                
-                                <p>24時間365日の監視体制により、障害を早期発見し、迅速な復旧作業を行います。また、定期的なメンテナンスにより、障害の発生を未然に防ぎます。</p>
-                                
-                                <h4 class="text-lg font-semibold text-primary mt-6 mb-3">主な特徴</h4>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        24時間365日の専門スタッフによる監視
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        平均復旧時間15分以内の迅速な対応
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        予防保守による障害の未然防止
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        セキュリティ対策の継続的な実施
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ECマーケティング支援 -->
-                <div class="mb-16">
-                    <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    
+                    <div class="fade-in-up" style="display: flex; align-items: center; gap: 24px; background: white; padding: 32px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #E2E8F0;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #38BDF8, #0EA5E9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: 700; flex-shrink: 0;">2</div>
                         <div>
-                            <h3 class="text-2xl font-bold text-primary mb-6">ECマーケティング支援</h3>
-                            <div class="space-y-4 text-gray-600 leading-relaxed">
-                                <p>EC市場の拡大に伴い、効果的なデジタルマーケティング戦略が重要になっています。お客様のECサイトの成功をサポートします。</p>
-                                
-                                <p>ECサイトの構築から運営、マーケティング戦略立案まで、デジタルマーケティングの全領域をカバーします。データ分析に基づく改善提案により、売上向上を実現します。</p>
-                                
-                                <h4 class="text-lg font-semibold text-primary mt-6 mb-3">主な特徴</h4>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        お客様の業界・商品に特化した戦略立案
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        データ分析に基づく効果的な改善提案
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        SEO・SEM・SNSを活用した総合的なマーケティング
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        継続的な改善による売上向上
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="bg-white rounded-xl shadow-lg p-8">
-                            <h4 class="text-xl font-bold text-primary mb-6">改善実績</h4>
-                            <div class="space-y-6">
-                                <div class="text-center p-4 bg-gradient-to-r from-primary to-secondary rounded-lg text-white">
-                                    <div class="text-2xl font-bold">2.5倍</div>
-                                    <div class="text-sm opacity-90">コンバージョン率向上</div>
-                                </div>
-                                <div class="text-center p-4 bg-gradient-to-r from-primary to-secondary rounded-lg text-white">
-                                    <div class="text-2xl font-bold">20位</div>
-                                    <div class="text-sm opacity-90">検索順位向上</div>
-                                </div>
-                                <div class="text-center p-4 bg-gradient-to-r from-primary to-secondary rounded-lg text-white">
-                                    <div class="text-2xl font-bold">150%</div>
-                                    <div class="text-sm opacity-90">売上向上</div>
-                                </div>
-                            </div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;">提案・計画策定</h3>
+                            <p style="color: #64748B; line-height: 1.6;">最適なソリューションを提案し、詳細な実施計画を策定します。</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- システム開発 -->
-                <div>
-                    <div class="grid lg:grid-cols-2 gap-12 items-start">
-                        <div class="bg-white rounded-xl shadow-lg p-8 order-2 lg:order-1">
-                            <h4 class="text-xl font-bold text-primary mb-6">開発実績</h4>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <div class="w-3 h-3 bg-primary rounded-full mt-1 mr-3 flex-shrink-0"></div>
-                                    <div>
-                                        <h5 class="font-semibold text-gray-800">Webアプリケーション</h5>
-                                        <p class="text-gray-600 text-sm">50件以上の開発実績</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="w-3 h-3 bg-primary rounded-full mt-1 mr-3 flex-shrink-0"></div>
-                                    <div>
-                                        <h5 class="font-semibold text-gray-800">モバイルアプリ</h5>
-                                        <p class="text-gray-600 text-sm">iOS・Android対応アプリ開発</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="w-3 h-3 bg-primary rounded-full mt-1 mr-3 flex-shrink-0"></div>
-                                    <div>
-                                        <h5 class="font-semibold text-gray-800">システム改修</h5>
-                                        <p class="text-gray-600 text-sm">既存システムの効率化・機能追加</p>
-                                    </div>
-                                </div>
-                            </div>
+                    
+                    <div class="fade-in-up" style="display: flex; align-items: center; gap: 24px; background: white; padding: 32px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #E2E8F0;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #38BDF8, #0EA5E9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: 700; flex-shrink: 0;">3</div>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;">開発・導入</h3>
+                            <p style="color: #64748B; line-height: 1.6;">計画に基づいて開発を実施し、お客様の環境に導入します。</p>
                         </div>
-                        <div class="order-1 lg:order-2">
-                            <h3 class="text-2xl font-bold text-primary mb-6">システム開発</h3>
-                            <div class="space-y-4 text-gray-600 leading-relaxed">
-                                <p>お客様のビジネスニーズに合わせたカスタムシステム開発から、既存システムの改修まで幅広く対応します。</p>
-                                
-                                <p>最新技術を活用し、高品質で使いやすいシステムを提供します。開発から運用まで一貫したサポートにより、お客様のビジネス成功をサポートします。</p>
-                                
-                                <h4 class="text-lg font-semibold text-primary mt-6 mb-3">主な特徴</h4>
-                                <ul class="space-y-2">
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        お客様のニーズに合わせたカスタム開発
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        最新技術を活用した高品質なシステム
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        開発から運用まで一貫したサポート
-                                    </li>
-                                    <li class="flex items-start">
-                                        <span class="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                                        スケーラブルな設計による将来性の確保
-                                    </li>
-                                </ul>
-                            </div>
+                    </div>
+                    
+                    <div class="fade-in-up" style="display: flex; align-items: center; gap: 24px; background: white; padding: 32px; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid #E2E8F0;">
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #38BDF8, #0EA5E9); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: 700; flex-shrink: 0;">4</div>
+                        <div>
+                            <h3 style="font-size: 1.25rem; font-weight: 700; color: #0F172A; margin-bottom: 8px;">運用・サポート</h3>
+                            <p style="color: #64748B; line-height: 1.6;">導入後の運用サポートと継続的な改善を行います。</p>
                         </div>
                     </div>
                 </div>
@@ -562,14 +221,14 @@
         </section>
 
         <!-- CTA -->
-        <section class="py-20 bg-gray-50 dark:bg-dark-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="animate-fade-in-up">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-4 font-jp">お気軽にご相談ください</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-200 mb-8 max-w-3xl mx-auto font-jp">
+        <section class="section">
+            <div class="container" style="text-align: center;">
+                <div class="fade-in-up">
+                    <h2 style="font-size: 2rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">お気軽にご相談ください</h2>
+                    <p style="font-size: 1.125rem; color: #64748B; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
                         お客様のビジネス課題について、無料でご相談を承ります
                     </p>
-                    <a href="contact.html" class="inline-block bg-gradient-to-r from-primary-600 to-primary-800 dark:from-primary-700 dark:to-primary-900 text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-primary-700 hover:to-primary-900 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl font-jp">
+                    <a href="./contact.html" style="display: inline-block; background: linear-gradient(135deg, #38BDF8, #0EA5E9); color: white; padding: 16px 32px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 1.125rem; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);">
                         資料請求・お問い合わせはこちら
                     </a>
                 </div>
@@ -577,187 +236,60 @@
         </section>
     </main>
 
-    <!-- フッター -->
-    <footer class="bg-dark text-white relative overflow-hidden">
-        <!-- 背景パターン -->
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPgo8L3N2Zz4=')] opacity-50"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-2">
-                    <h3 class="text-3xl font-bold mb-6 font-jp">オールジェンス株式会社</h3>
-                    <p class="text-gray-200 mb-6 text-lg font-jp">テクノロジーで未来を切り拓く</p>
-                    <div class="space-y-3 text-gray-200">
-                        <div class="flex items-start">
-                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1 text-accent flex-shrink-0"></i>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3 class="footer-title">オールジェンス株式会社</h3>
+                    <p class="footer-description">テクノロジーで未来を切り拓く</p>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <p>〒100-0001</p>
                                 <p>東京都千代田区千代田1-1-1</p>
-                                <p>サンプルビル5階</p>
+                                <p>バーチャルオフィス</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i data-lucide="phone" class="w-5 h-5 mr-3 text-accent"></i>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
                             <p>03-1234-5678</p>
                         </div>
-                        <div class="flex items-center">
-                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-accent"></i>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
                             <p>info@allgens.co.jp</p>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-6 font-jp">サービス</h3>
-                    <ul class="space-y-3">
-                        <li><a href="services.html" class="text-accent font-medium flex items-center group">
-                            <i data-lucide="brain" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            AI導入コンサルティング
-                        </a></li>
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="settings" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            システム運用サポート
-                        </a></li>
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="trending-up" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            ECマーケティング支援
-                        </a></li>
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="code" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            システム開発
-                        </a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-6 font-jp">会社情報</h3>
-                    <ul class="space-y-3">
-                        <li><a href="about.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="building" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            会社概要
-                        </a></li>
-                        <li><a href="message.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="user" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            代表挨拶
-                        </a></li>
-                        <li><a href="contact.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="mail" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            お問い合わせ
-                        </a></li>
-                        <li><a href="privacy.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="shield" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            プライバシーポリシー
-                        </a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">サービス</h4>
+                        <ul class="footer-list">
+                            <li><a href="./services.html">AI導入コンサルティング</a></li>
+                            <li><a href="./services.html">システム運用サポート</a></li>
+                            <li><a href="./services.html">ECマーケティング支援</a></li>
+                            <li><a href="./services.html">システム開発</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">会社情報</h4>
+                        <ul class="footer-list">
+                            <li><a href="./about.html">会社概要</a></li>
+                            <li><a href="./message.html">代表挨拶</a></li>
+                            <li><a href="./contact.html">お問い合わせ</a></li>
+                            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-600 pt-8 text-center text-gray-200">
-                <p class="font-jp">&copy; 2024 オールジェンス株式会社. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 オールジェンス株式会社. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Lucideアイコンの初期化
-        lucide.createIcons();
-
-        // GSAP初期化
-        gsap.registerPlugin(ScrollTrigger);
-
-        // ダークモード切り替え
-        function toggleDarkMode() {
-            const html = document.documentElement;
-            const isDark = html.classList.contains('dark');
-            
-            if (isDark) {
-                html.classList.remove('dark');
-                localStorage.setItem('darkMode', 'false');
-            } else {
-                html.classList.add('dark');
-                localStorage.setItem('darkMode', 'true');
-            }
-        }
-
-        // ダークモード状態の復元
-        function initDarkMode() {
-            const savedMode = localStorage.getItem('darkMode');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
-            if (savedMode === 'true' || (savedMode === null && prefersDark)) {
-                document.documentElement.classList.add('dark');
-            }
-        }
-
-        // スクロールアニメーション
-        function initScrollAnimations() {
-            // フェードインアニメーション
-            gsap.utils.toArray('.animate-fade-in-up').forEach(element => {
-                gsap.fromTo(element, 
-                    { opacity: 0, y: 50 },
-                    { 
-                        opacity: 1, 
-                        y: 0, 
-                        duration: 0.8, 
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: element,
-                            start: "top 85%",
-                            toggleActions: "play none none reverse"
-                        }
-                    }
-                );
-            });
-
-            // スケールアニメーション
-            gsap.utils.toArray('.animate-scale-in').forEach(element => {
-                gsap.fromTo(element, 
-                    { opacity: 0, scale: 0.8 },
-                    { 
-                        opacity: 1, 
-                        scale: 1, 
-                        duration: 0.6, 
-                        ease: "back.out(1.7)",
-                        scrollTrigger: {
-                            trigger: element,
-                            start: "top 85%",
-                            toggleActions: "play none none reverse"
-                        }
-                    }
-                );
-            });
-        }
-
-        // モバイルメニューの切り替え
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        // スムーススクロール
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // ページ読み込み時の初期化
-        document.addEventListener('DOMContentLoaded', function() {
-            initDarkMode();
-            initScrollAnimations();
-            
-            // ダークモード切り替えボタンのイベント
-            document.getElementById('darkModeToggle').addEventListener('click', toggleDarkMode);
-        });
-
-        // リサイズ時の処理
-        window.addEventListener('resize', function() {
-            ScrollTrigger.refresh();
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
 </body>
 </html>

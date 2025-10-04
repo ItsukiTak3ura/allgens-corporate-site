@@ -4,390 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>プライバシーポリシー - オールジェンス株式会社</title>
-    <meta name="description" content="オールジェンス株式会社のプライバシーポリシー。個人情報の取り扱いについてご説明します。">
-    <meta name="keywords" content="プライバシーポリシー,個人情報保護,個人情報の取り扱い">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+    <meta name="description" content="オールジェンス株式会社のプライバシーポリシー。個人情報の取り扱いについて詳しくご説明します。">
+    <meta name="keywords" content="プライバシーポリシー,個人情報保護,オールジェンス">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://itsukitak3ura.github.io/allgens-corporate-site/privacy.html">
+    <meta property="og:title" content="プライバシーポリシー - オールジェンス株式会社">
+    <meta property="og:description" content="オールジェンス株式会社のプライバシーポリシー。個人情報の取り扱いについて詳しくご説明します。">
+    <meta property="og:image" content="https://itsukitak3ura.github.io/allgens-corporate-site/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://itsukitak3ura.github.io/allgens-corporate-site/privacy.html">
+    <meta property="twitter:title" content="プライバシーポリシー - オールジェンス株式会社">
+    <meta property="twitter:description" content="オールジェンス株式会社のプライバシーポリシー。個人情報の取り扱いについて詳しくご説明します。">
+    <meta property="twitter:image" content="https://itsukitak3ura.github.io/allgens-corporate-site/og-image.jpg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                            950: '#082f49',
-                        },
-                        dark: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                            950: '#020617',
-                        },
-                        accent: {
-                            50: '#fffbeb',
-                            100: '#fef3c7',
-                            200: '#fde68a',
-                            300: '#fcd34d',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                            800: '#92400e',
-                            900: '#78350f',
-                            950: '#451a03',
-                        }
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'Noto Sans JP', 'sans-serif'],
-                        'jp': ['Noto Sans JP', 'sans-serif'],
-                        'en': ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.8s ease-out',
-                        'fade-in-up': 'fadeInUp 1s ease-out',
-                        'fade-in-down': 'fadeInDown 1s ease-out',
-                        'scale-in': 'scaleIn 0.6s ease-out',
-                        'slide-in-left': 'slideInLeft 0.8s ease-out',
-                        'slide-in-right': 'slideInRight 0.8s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 3s ease-in-out infinite',
-                        'bounce-slow': 'bounce 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        fadeInDown: {
-                            '0%': { opacity: '0', transform: 'translateY(-40px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        scaleIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.8)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' },
-                        },
-                        slideInLeft: {
-                            '0%': { opacity: '0', transform: 'translateX(-40px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        slideInRight: {
-                            '0%': { opacity: '0', transform: 'translateX(40px)' },
-                            '100%': { opacity: '1', transform: 'translateX(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                    },
-                    backdropBlur: {
-                        xs: '2px',
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="canonical" href="https://allgens.co.jp/privacy.html">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="canonical" href="https://itsukitak3ura.github.io/allgens-corporate-site/privacy.html">
 </head>
-<body class="font-sans text-gray-800 bg-white dark:bg-dark-950 dark:text-white transition-colors duration-300">
-    <!-- ヘッダー -->
-    <header class="bg-white/80 dark:bg-dark-950/80 backdrop-blur-md shadow-lg fixed top-0 left-0 right-0 z-40 border-b border-gray-200/20 dark:border-gray-800/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="text-2xl font-bold text-primary-600 dark:text-primary-400 font-en tracking-tight">ALLGENS</a>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="index.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        ホーム
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="about.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        会社概要
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="services.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        サービス
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="results.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        実績
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="message.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        代表挨拶
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                    <a href="contact.html" class="text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300 font-medium relative group">
-                        お問い合わせ
-                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 dark:bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </nav>
-                <!-- モバイルメニューボタン -->
-                <button class="md:hidden p-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="./index.html" class="logo-link">ALLGENS</a>
+                </div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="./index.html" class="nav-link">ホーム</a>
+                    <a href="./about.html" class="nav-link">会社概要</a>
+                    <a href="#services" class="nav-link">サービス</a>
+                    <a href="#results" class="nav-link">実績</a>
+                    <a href="./message.html" class="nav-link">代表挨拶</a>
+                    <a href="./contact.html" class="nav-link">お問い合わせ</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-        </div>
-        <!-- モバイルメニュー -->
-        <div id="mobileMenu" class="md:hidden bg-white dark:bg-dark-950 border-t border-gray-200 dark:border-gray-800 hidden">
-            <div class="px-4 py-2 space-y-1">
-                <a href="index.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">ホーム</a>
-                <a href="about.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">会社概要</a>
-                <a href="services.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">サービス</a>
-                <a href="results.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">実績</a>
-                <a href="message.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">代表挨拶</a>
-                <a href="contact.html" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-300">お問い合わせ</a>
-            </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- メインコンテンツ -->
-    <main class="pt-20">
-        <!-- ページヘッダー -->
-        <section class="relative py-32 bg-gradient-to-br from-primary-50 via-white to-accent-50 dark:from-dark-900 dark:via-dark-950 dark:to-dark-800 overflow-hidden">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIgZmlsbD0icmdiYSg1OSwxMzAsMjM0LDAuMSkiLz4KPC9zdmc+')] opacity-30"></div>
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <div class="animate-fade-in-up">
-                    <span class="inline-block px-6 py-3 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 rounded-full text-sm font-medium mb-8">
-                        <i data-lucide="shield" class="w-4 h-4 inline mr-2"></i>
-                        プライバシーポリシー
-                    </span>
-                    <h1 class="text-5xl md:text-7xl font-black text-gray-900 dark:text-white mb-8 font-jp">
-                        プライバシーポリシー
-                    </h1>
-                    <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed font-jp">
-                        個人情報の取り扱いについて
-                    </p>
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="hero">
+            <div class="hero-background">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    プライバシーポリシー
                 </div>
+                <h1 class="hero-title">
+                    <span class="hero-title-line">プライバシーポリシー</span>
+                </h1>
+                <p class="hero-description">
+                    個人情報の取り扱いについて
+                </p>
             </div>
         </section>
 
-        <!-- プライバシーポリシー内容 -->
-        <section class="py-20 bg-white dark:bg-dark-900">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white dark:bg-dark-700 rounded-xl shadow-lg p-8 md:p-12 animate-scale-in">
-                    <div class="text-right mb-8 text-sm text-gray-500 dark:text-gray-400 font-jp">
-                        制定日：2024年4月1日<br>
-                        最終更新日：2024年4月1日
-                    </div>
-
-                    <div class="prose prose-lg max-w-none">
-                        <h2 class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6 font-jp">1. 基本方針</h2>
-                        <p class="text-gray-600 dark:text-gray-200 leading-relaxed mb-8 font-jp">
-                            オールジェンス株式会社（以下「当社」）は、個人情報の保護に関する法律（個人情報保護法）を遵守し、お客様の個人情報を適切に取り扱います。
+        <!-- Privacy Policy Content -->
+        <section class="section">
+            <div class="container" style="max-width: 800px;">
+                <div style="background: white; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 48px; border: 1px solid #E2E8F0;">
+                    <div class="fade-in-up">
+                        <p style="color: #64748B; margin-bottom: 32px; text-align: right;">
+                            最終更新日：2024年4月1日
                         </p>
 
-                        <h2 class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6 font-jp">2. 個人情報の定義</h2>
-                        <p class="text-gray-600 dark:text-gray-200 leading-relaxed mb-8 font-jp">
-                            個人情報とは、個人情報保護法にいう「個人情報」を指し、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日、住所、電話番号、連絡先その他の記述等により特定の個人を識別できる情報及び容貌、指紋、声紋にかかるデータ、及び健康保険証の保険者番号などの当該情報単体から特定の個人を識別できる情報（個人識別情報）を指します。
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">1. 基本方針</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 32px;">
+                            オールジェンス株式会社（以下「当社」）は、個人情報の保護に関する法律（個人情報保護法）を遵守し、お客様の個人情報を適切に取り扱うことをお約束いたします。
                         </p>
 
-                        <h2 class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6 font-jp">3. 個人情報の収集方法</h2>
-                        <p class="text-gray-600 dark:text-gray-200 leading-relaxed mb-4 font-jp">当社は、お客様から個人情報を収集する場合、以下の方法により行います：</p>
-                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-200 mb-8 space-y-2 font-jp">
-                            <li>お問い合わせフォームからの入力</li>
-                            <li>電話、メール、FAXによる連絡</li>
-                            <li>資料請求、セミナー申込み</li>
-                            <li>サービス利用時の登録</li>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">2. 個人情報の定義</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 32px;">
+                            個人情報とは、生存する個人に関する情報であって、当該情報に含まれる氏名、生年月日その他の記述等により特定の個人を識別することができるもの（他の情報と容易に照合することができ、それにより特定の個人を識別することができることとなるものを含みます。）をいいます。
+                        </p>
+
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">3. 個人情報の収集</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 16px;">
+                            当社は、以下の場合に個人情報を収集することがあります：
+                        </p>
+                        <ul style="color: #64748B; line-height: 1.8; margin-bottom: 32px; padding-left: 24px;">
+                            <li style="margin-bottom: 8px;">お問い合わせフォームからの情報</li>
+                            <li style="margin-bottom: 8px;">サービス利用時の情報</li>
+                            <li style="margin-bottom: 8px;">資料請求時の情報</li>
+                            <li style="margin-bottom: 8px;">セミナー・イベント参加時の情報</li>
+                            <li style="margin-bottom: 8px;">その他、お客様から提供いただく情報</li>
                         </ul>
 
-                        <h2 class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6 font-jp">4. 個人情報の利用目的</h2>
-                        <p class="text-gray-600 dark:text-gray-200 leading-relaxed mb-4 font-jp">当社は、収集した個人情報を以下の目的で利用します：</p>
-                        <ul class="list-disc list-inside text-gray-600 dark:text-gray-200 mb-8 space-y-2 font-jp">
-                            <li>お客様からのお問い合わせへの回答</li>
-                            <li>サービスの提供・運営</li>
-                            <li>資料の送付</li>
-                            <li>セミナー・イベントの案内</li>
-                            <li>サービス改善のための分析</li>
-                            <li>法令に基づく対応</li>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">4. 個人情報の利用目的</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 16px;">
+                            当社は、収集した個人情報を以下の目的で利用いたします：
+                        </p>
+                        <ul style="color: #64748B; line-height: 1.8; margin-bottom: 32px; padding-left: 24px;">
+                            <li style="margin-bottom: 8px;">お問い合わせへの回答</li>
+                            <li style="margin-bottom: 8px;">サービスの提供・運営</li>
+                            <li style="margin-bottom: 8px;">資料の送付</li>
+                            <li style="margin-bottom: 8px;">セミナー・イベントのご案内</li>
+                            <li style="margin-bottom: 8px;">サービス改善のための分析</li>
+                            <li style="margin-bottom: 8px;">その他、お客様に有益な情報の提供</li>
                         </ul>
 
-                        <h2 class="text-2xl font-bold text-primary-600 dark:text-primary-400 mb-6 font-jp">5. 個人情報の第三者提供</h2>
-                        <p class="text-gray-600 dark:text-gray-200 leading-relaxed mb-4 font-jp">当社は、以下の場合を除き、お客様の個人情報を第三者に提供することはありません：</p>
-                        <ul class="list-disc list-inside text-gray-600 mb-8 space-y-2">
-                            <li>お客様の同意がある場合</li>
-                            <li>法令に基づく場合</li>
-                            <li>人の生命、身体または財産の保護のために必要がある場合</li>
-                            <li>公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合</li>
-                            <li>国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合</li>
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">5. 個人情報の第三者提供</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 32px;">
+                            当社は、法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。ただし、以下の場合は例外とします：
+                        </p>
+                        <ul style="color: #64748B; line-height: 1.8; margin-bottom: 32px; padding-left: 24px;">
+                            <li style="margin-bottom: 8px;">法令に基づく場合</li>
+                            <li style="margin-bottom: 8px;">人の生命、身体または財産の保護のために必要がある場合</li>
+                            <li style="margin-bottom: 8px;">公衆衛生の向上または児童の健全な育成の推進のために特に必要がある場合</li>
+                            <li style="margin-bottom: 8px;">国の機関もしくは地方公共団体またはその委託を受けた者が法令の定める事務を遂行することに対して協力する必要がある場合</li>
                         </ul>
 
-                        <h2 class="text-2xl font-bold text-primary mb-6">6. 個人情報の委託</h2>
-                        <p class="text-gray-600 leading-relaxed mb-8">
-                            当社は、個人情報の取扱いの全部または一部を第三者に委託する場合があります。この場合、当社は、委託先に対して適切な監督を行います。
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">6. 個人情報の管理</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 32px;">
+                            当社は、お客様の個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体制の整備・社員教育の徹底等の必要な措置を講じ、安全対策を実施し個人情報の厳重な管理を行います。
                         </p>
 
-                        <h2 class="text-2xl font-bold text-primary mb-6">7. 個人情報の安全管理</h2>
-                        <p class="text-gray-600 leading-relaxed mb-8">
-                            当社は、個人情報の漏洩、滅失または毀損の防止その他の個人情報の安全管理のために必要かつ適切な措置を講じます。
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">7. 個人情報の開示・訂正・削除</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 32px;">
+                            お客様が個人情報の照会・訂正・削除などをご希望される場合には、ご本人であることを確認の上、対応させていただきます。
                         </p>
 
-                        <h2 class="text-2xl font-bold text-primary mb-6">8. 個人情報の開示・訂正・削除</h2>
-                        <p class="text-gray-600 leading-relaxed mb-8">
-                            お客様は、当社の保有する自己の個人情報について、開示、訂正、削除、利用停止等を求めることができます。これらの請求を行う場合は、下記の連絡先までご連絡ください。
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">8. クッキー（Cookie）について</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 32px;">
+                            当社のウェブサイトでは、サービス向上のためクッキーを使用する場合があります。クッキーは、お客様のブラウザ設定により無効にすることができますが、一部のサービスがご利用いただけない場合があります。
                         </p>
 
-                        <h2 class="text-2xl font-bold text-primary mb-6">9. Cookieの使用</h2>
-                        <p class="text-gray-600 leading-relaxed mb-8">
-                            当社のウェブサイトでは、サービス向上のためCookieを使用する場合があります。Cookieの使用を希望されない場合は、ブラウザの設定でCookieを無効にすることができます。
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">9. プライバシーポリシーの変更</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 32px;">
+                            当社は、法令の変更やサービス内容の変更に伴い、本プライバシーポリシーを変更する場合があります。変更後のプライバシーポリシーは、当社ウェブサイトに掲載した時点で効力を生じるものとします。
                         </p>
 
-                        <h2 class="text-2xl font-bold text-primary mb-6">10. プライバシーポリシーの変更</h2>
-                        <p class="text-gray-600 leading-relaxed mb-8">
-                            当社は、法令の変更や事業内容の変更等に伴い、本プライバシーポリシーを変更する場合があります。変更後のプライバシーポリシーは、当社ウェブサイトに掲載した時点から効力を生じるものとします。
+                        <h2 style="font-size: 1.5rem; font-weight: 700; color: #38BDF8; margin-bottom: 16px;">10. お問い合わせ先</h2>
+                        <p style="color: #64748B; line-height: 1.8; margin-bottom: 16px;">
+                            個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください：
                         </p>
-
-                        <h2 class="text-2xl font-bold text-primary mb-6">11. お問い合わせ先</h2>
-                        <p class="text-gray-600 leading-relaxed mb-6">個人情報の取り扱いに関するお問い合わせは、下記までご連絡ください：</p>
-                        <div class="bg-gray-50 rounded-lg p-6">
-                            <p class="font-semibold text-primary mb-2">オールジェンス株式会社</p>
-                            <p class="font-semibold text-primary mb-4">個人情報保護管理者</p>
-                            <p class="text-gray-600 mb-2">
-                                〒100-0001<br>
-                                東京都千代田区千代田1-1-1<br>
-                                サンプルビル5階
-                            </p>
-                            <p class="text-gray-600">
-                                電話：03-1234-5678<br>
-                                メール：privacy@allgens.co.jp
-                            </p>
+                        <div style="background: #F8FAFC; padding: 24px; border-radius: 12px; margin-bottom: 32px;">
+                            <p style="color: #0F172A; font-weight: 600; margin-bottom: 8px;">オールジェンス株式会社</p>
+                            <p style="color: #64748B; margin-bottom: 4px;">〒100-0001 東京都千代田区千代田1-1-1</p>
+                            <p style="color: #64748B; margin-bottom: 4px;">TEL: 03-1234-5678</p>
+                            <p style="color: #64748B; margin-bottom: 4px;">Email: info@allgens.co.jp</p>
                         </div>
-                    </div>
 
-                    <div class="text-center mt-12">
-                        <a href="index.html" class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-lg font-bold text-lg hover:from-secondary hover:to-primary transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
-                            ホームに戻る
-                        </a>
+                        <div style="text-align: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid #E2E8F0;">
+                            <a href="./contact.html" style="display: inline-block; background: linear-gradient(135deg, #38BDF8, #0EA5E9); color: white; padding: 16px 32px; border-radius: 12px; font-weight: 700; text-decoration: none; font-size: 1.125rem; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3);">
+                                お問い合わせはこちら
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- フッター -->
-    <footer class="bg-dark text-white relative overflow-hidden">
-        <!-- 背景パターン -->
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIvPgo8L3N2Zz4=')] opacity-50"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-2">
-                    <h3 class="text-3xl font-bold mb-6 font-jp">オールジェンス株式会社</h3>
-                    <p class="text-gray-200 mb-6 text-lg font-jp">テクノロジーで未来を切り拓く</p>
-                    <div class="space-y-3 text-gray-200">
-                        <div class="flex items-start">
-                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 mt-1 text-accent flex-shrink-0"></i>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <h3 class="footer-title">オールジェンス株式会社</h3>
+                    <p class="footer-description">テクノロジーで未来を切り拓く</p>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <p>〒100-0001</p>
                                 <p>東京都千代田区千代田1-1-1</p>
-                                <p>サンプルビル5階</p>
+                                <p>バーチャルオフィス</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i data-lucide="phone" class="w-5 h-5 mr-3 text-accent"></i>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
                             <p>03-1234-5678</p>
                         </div>
-                        <div class="flex items-center">
-                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-accent"></i>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
                             <p>info@allgens.co.jp</p>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-6 font-jp">サービス</h3>
-                    <ul class="space-y-3">
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="brain" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            AI導入コンサルティング
-                        </a></li>
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="settings" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            システム運用サポート
-                        </a></li>
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="trending-up" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            ECマーケティング支援
-                        </a></li>
-                        <li><a href="services.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="code" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            システム開発
-                        </a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-6 font-jp">会社情報</h3>
-                    <ul class="space-y-3">
-                        <li><a href="about.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="building" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            会社概要
-                        </a></li>
-                        <li><a href="message.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="user" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            代表挨拶
-                        </a></li>
-                        <li><a href="contact.html" class="text-gray-200 hover:text-accent transition-colors duration-300 flex items-center group">
-                            <i data-lucide="mail" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            お問い合わせ
-                        </a></li>
-                        <li><a href="privacy.html" class="text-accent font-medium flex items-center group">
-                            <i data-lucide="shield" class="w-4 h-4 mr-2 group-hover:scale-110 transition-transform"></i>
-                            プライバシーポリシー
-                        </a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">サービス</h4>
+                        <ul class="footer-list">
+                            <li><a href="#services">AI導入コンサルティング</a></li>
+                            <li><a href="#services">システム運用サポート</a></li>
+                            <li><a href="#services">ECマーケティング支援</a></li>
+                            <li><a href="#services">システム開発</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-column-title">会社情報</h4>
+                        <ul class="footer-list">
+                            <li><a href="./about.html">会社概要</a></li>
+                            <li><a href="./message.html">代表挨拶</a></li>
+                            <li><a href="./contact.html">お問い合わせ</a></li>
+                            <li><a href="./privacy.html">プライバシーポリシー</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-600 pt-8 text-center text-gray-200">
-                <p class="font-jp">&copy; 2024 オールジェンス株式会社. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2024 オールジェンス株式会社. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // モバイルメニューの切り替え
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        // スムーススクロール
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
 </body>
 </html>

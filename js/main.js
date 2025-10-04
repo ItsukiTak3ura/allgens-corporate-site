@@ -1,230 +1,396 @@
-// Main JavaScript for Allgens Corporate Site
-// Optimized for GitHub Pages static hosting
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all functionality
-    initNavigation();
-    initScrollEffects();
-    initAnimations();
-    initCounters();
-    initSmoothScroll();
-    initMobileMenu();
-});
-
-// Navigation functionality
-function initNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section[id]');
+// ===== MOBILE MENU TOGGLE =====
+function toggleMobileMenu() {
+    const navMenu = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
     
-    // Update active nav link on scroll
-    function updateActiveNav() {
-        const scrollPos = window.scrollY + 100;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
+    if (navMenu && navToggle) {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+    }
+}
+
+// ===== SCROLL ANIMATIONS =====
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
         });
-    }
-    
-    // Throttled scroll event
-    let ticking = false;
-    function onScroll() {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                updateActiveNav();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
-    
-    window.addEventListener('scroll', onScroll);
-    
-    // Smooth scroll for nav links
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+    }, observerOptions);
+
+    // Observe all elements with animation classes
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+    animatedElements.forEach(el => {
+        observer.observe(el);
+    });
+}
+
+// ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+function initSmoothScroll() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetSection.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             }
         });
     });
 }
 
-// Mobile menu functionality
-function initMobileMenu() {
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        const navLinks = navMenu.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            }
-        });
-    }
-}
-
-// Scroll effects
-function initScrollEffects() {
+// ===== HEADER SCROLL EFFECT =====
+function initHeaderScroll() {
     const header = document.querySelector('.header');
+    if (!header) return;
+
+    let lastScrollY = window.scrollY;
     
-    function updateHeader() {
-        if (window.scrollY > 100) {
+    window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        
+        if (currentScrollY > 100) {
             header.style.background = 'rgba(255, 255, 255, 0.98)';
             header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         } else {
             header.style.background = 'rgba(255, 255, 255, 0.95)';
             header.style.boxShadow = 'none';
         }
-    }
-    
-    let ticking = false;
-    function onScroll() {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                updateHeader();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
-    
-    window.addEventListener('scroll', onScroll);
-}
-
-// Intersection Observer for animations
-function initAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-in-up');
-            }
-        });
-    }, observerOptions);
-    
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll(
-        '.challenge-card, .solution-card, .service-card, .achievement-card, .cta-card'
-    );
-    
-    animateElements.forEach(el => {
-        observer.observe(el);
+        
+        lastScrollY = currentScrollY;
     });
 }
 
-// Counter animation
-function initCounters() {
-    const counters = document.querySelectorAll('.stat-number, .achievement-number');
+// ===== FORM VALIDATION =====
+function initFormValidation() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const nameInput = document.getElementById('name');
+    const messageInput = document.getElementById('message');
+
+    // Email validation
+    if (emailInput) {
+        emailInput.addEventListener('blur', function() {
+            const email = this.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && !emailRegex.test(email)) {
+                this.style.borderColor = '#EF4444';
+                this.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+                showFieldError(this, '正しいメールアドレスを入力してください。');
+            } else {
+                this.style.borderColor = '#10B981';
+                this.style.boxShadow = '0 0 0 3px rgba(16, 185, 129, 0.1)';
+                hideFieldError(this);
+            }
+        });
+    }
+
+    // Phone validation
+    if (phoneInput) {
+        phoneInput.addEventListener('blur', function() {
+            const phone = this.value.trim();
+            const phoneRegex = /^[\d\-\(\)\+\s]+$/;
+            
+            if (phone && !phoneRegex.test(phone)) {
+                this.style.borderColor = '#EF4444';
+                this.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+                showFieldError(this, '正しい電話番号を入力してください。');
+            } else {
+                this.style.borderColor = '#10B981';
+                this.style.boxShadow = '0 0 0 3px rgba(16, 185, 129, 0.1)';
+                hideFieldError(this);
+            }
+        });
+    }
+
+    // Required field validation
+    [nameInput, messageInput].forEach(input => {
+        if (input) {
+            input.addEventListener('blur', function() {
+                if (this.value.trim()) {
+                    this.style.borderColor = '#10B981';
+                    this.style.boxShadow = '0 0 0 3px rgba(16, 185, 129, 0.1)';
+                    hideFieldError(this);
+                } else {
+                    this.style.borderColor = '#EF4444';
+                    this.style.boxShadow = '0 0 0 3px rgba(239, 68, 68, 0.1)';
+                }
+            });
+        }
+    });
+}
+
+// ===== FORM ERROR HANDLING =====
+function showFieldError(field, message) {
+    hideFieldError(field); // Remove existing error first
     
-    const counterObserver = new IntersectionObserver((entries) => {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'field-error';
+    errorDiv.style.cssText = `
+        color: #EF4444;
+        font-size: 0.75rem;
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    `;
+    errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+    
+    field.parentNode.appendChild(errorDiv);
+}
+
+function hideFieldError(field) {
+    const existingError = field.parentNode.querySelector('.field-error');
+    if (existingError) {
+        existingError.remove();
+    }
+}
+
+// ===== FORM SUBMISSION =====
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const formData = new FormData(form);
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    // Disable submit button
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 送信中...';
+    
+    // Simulate form submission (replace with actual Formspree endpoint)
+    fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            showSuccessMessage();
+            form.reset();
+        } else {
+            showErrorMessage();
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showErrorMessage();
+    })
+    .finally(() => {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.innerHTML = '送信する';
+    });
+}
+
+function showSuccessMessage() {
+    const message = document.createElement('div');
+    message.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #10B981, #059669);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        animation: slideInRight 0.3s ease-out;
+    `;
+    message.innerHTML = '<i class="fas fa-check-circle"></i> お問い合わせを受け付けました。ありがとうございます！';
+    
+    document.body.appendChild(message);
+    
+    setTimeout(() => {
+        message.style.animation = 'slideOutRight 0.3s ease-out';
+        setTimeout(() => message.remove(), 300);
+    }, 5000);
+}
+
+function showErrorMessage() {
+    const message = document.createElement('div');
+    message.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #EF4444, #DC2626);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        animation: slideInRight 0.3s ease-out;
+    `;
+    message.innerHTML = '<i class="fas fa-exclamation-circle"></i> 送信に失敗しました。もう一度お試しください。';
+    
+    document.body.appendChild(message);
+    
+    setTimeout(() => {
+        message.style.animation = 'slideOutRight 0.3s ease-out';
+        setTimeout(() => message.remove(), 5000);
+    }, 5000);
+}
+
+// ===== STATISTICS COUNTER ANIMATION =====
+function initStatsCounter() {
+    const statNumbers = document.querySelectorAll('.stat-number, .achievement-number');
+    
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 animateCounter(entry.target);
-                counterObserver.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.5 });
-    
-    counters.forEach(counter => {
-        counterObserver.observe(counter);
+    }, observerOptions);
+
+    statNumbers.forEach(stat => {
+        observer.observe(stat);
     });
 }
 
 function animateCounter(element) {
     const target = parseInt(element.textContent) || 0;
     const duration = 2000;
-    const increment = target / (duration / 16);
-    let current = 0;
+    const start = performance.now();
     
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
-        }
+    function updateCounter(currentTime) {
+        const elapsed = currentTime - start;
+        const progress = Math.min(elapsed / duration, 1);
         
-        // Format number based on content
-        if (element.textContent.includes('%')) {
-            element.textContent = Math.floor(current) + '%';
-        } else if (element.textContent.includes('+')) {
-            element.textContent = Math.floor(current) + '+';
-        } else if (element.textContent.includes('/')) {
-            element.textContent = Math.floor(current) + '/7';
-        } else if (element.textContent.includes('分')) {
-            element.textContent = Math.floor(current) + '分';
+        // Easing function for smooth animation
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        const current = Math.floor(target * easeOutQuart);
+        
+        element.textContent = current;
+        
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
         } else {
-            element.textContent = Math.floor(current);
+            element.textContent = target;
         }
-    }, 16);
+    }
+    
+    requestAnimationFrame(updateCounter);
 }
 
-// Smooth scroll for all anchor links
-function initSmoothScroll() {
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+// ===== LAZY LOADING FOR IMAGES =====
+function initLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
     
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
-            
-            e.preventDefault();
-            const target = document.querySelector(href);
-            
-            if (target) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = target.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
             }
         });
     });
+
+    images.forEach(img => {
+        imageObserver.observe(img);
+    });
 }
 
-// Utility functions
+// ===== PERFORMANCE OPTIMIZATIONS =====
+function initPerformanceOptimizations() {
+    // Preload critical resources
+    const criticalResources = [
+        './css/style.css',
+        'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap'
+    ];
+
+    criticalResources.forEach(resource => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = resource;
+        link.as = resource.endsWith('.css') ? 'style' : 'font';
+        if (link.as === 'font') link.crossOrigin = 'anonymous';
+        document.head.appendChild(link);
+    });
+
+    // Add loading states
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('loaded');
+    });
+}
+
+// ===== ACCESSIBILITY ENHANCEMENTS =====
+function initAccessibility() {
+    // Skip to main content link
+    const skipLink = document.createElement('a');
+    skipLink.href = '#main-content';
+    skipLink.textContent = 'メインコンテンツにスキップ';
+    skipLink.style.cssText = `
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #38BDF8;
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+        z-index: 10001;
+        transition: top 0.3s;
+    `;
+    skipLink.addEventListener('focus', () => {
+        skipLink.style.top = '6px';
+    });
+    skipLink.addEventListener('blur', () => {
+        skipLink.style.top = '-40px';
+    });
+    document.body.insertBefore(skipLink, document.body.firstChild);
+
+    // Add main content id
+    const main = document.querySelector('main');
+    if (main) {
+        main.id = 'main-content';
+    }
+
+    // Keyboard navigation for mobile menu
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const navMenu = document.getElementById('nav-menu');
+            const navToggle = document.getElementById('nav-toggle');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                navToggle.focus();
+            }
+        }
+    });
+}
+
+// ===== UTILITY FUNCTIONS =====
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -247,52 +413,98 @@ function throttle(func, limit) {
             inThrottle = true;
             setTimeout(() => inThrottle = false, limit);
         }
-    };
-}
-
-// Handle window resize
-window.addEventListener('resize', debounce(() => {
-    // Recalculate any layout-dependent values
-    const navMenu = document.getElementById('nav-menu');
-    if (navMenu && window.innerWidth > 768) {
-        navMenu.classList.remove('active');
-        document.getElementById('nav-toggle').classList.remove('active');
-    }
-}, 250));
-
-// Error handling for missing elements
-function safeQuerySelector(selector) {
-    try {
-        return document.querySelector(selector);
-    } catch (error) {
-        console.warn(`Element not found: ${selector}`);
-        return null;
     }
 }
 
-// Performance optimization: Lazy load images if any
-function initLazyLoading() {
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
+// ===== INITIALIZATION =====
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all features
+    initScrollAnimations();
+    initSmoothScroll();
+    initHeaderScroll();
+    initFormValidation();
+    initStatsCounter();
+    initLazyLoading();
+    initPerformanceOptimizations();
+    initAccessibility();
+
+    // Add form submit handler if form exists
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleFormSubmit);
+    }
+
+    // Add mobile menu toggle handler
+    const navToggle = document.getElementById('nav-toggle');
+    if (navToggle) {
+        navToggle.addEventListener('click', toggleMobileMenu);
+    }
+
+    // Close mobile menu when clicking on links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const navMenu = document.getElementById('nav-menu');
+            const navToggle = document.getElementById('nav-toggle');
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            }
         });
-        
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        lazyImages.forEach(img => imageObserver.observe(img));
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', debounce(() => {
+        // Refresh scroll animations on resize
+        initScrollAnimations();
+    }, 250));
+
+    // Handle scroll events
+    window.addEventListener('scroll', throttle(() => {
+        // Additional scroll-based functionality can be added here
+    }, 16)); // ~60fps
+});
+
+// ===== CSS ANIMATIONS FOR NOTIFICATIONS =====
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideInRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
-}
-
-// Initialize lazy loading if needed
-initLazyLoading();
-
-// Console message for developers
-console.log('%cオールジェンス株式会社', 'color: #2563eb; font-size: 20px; font-weight: bold;');
-console.log('%cテクノロジーで未来を切り拓く', 'color: #6b7280; font-size: 14px;');
-console.log('%cWebsite optimized for GitHub Pages', 'color: #10b981; font-size: 12px;');
+    
+    @keyframes slideOutRight {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+    
+    .lazy {
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .lazy.loaded {
+        opacity: 1;
+    }
+    
+    body:not(.loaded) {
+        overflow: hidden;
+    }
+    
+    body.loaded {
+        overflow: auto;
+    }
+`;
+document.head.appendChild(style);
