@@ -500,11 +500,11 @@ style.textContent = `
     }
     
     body:not(.loaded) {
-        overflow: hidden;
+        overflow-x: hidden;
     }
     
     body.loaded {
-        overflow: auto;
+        overflow-x: auto;
     }
 `;
 document.head.appendChild(style);
